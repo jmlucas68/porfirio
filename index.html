@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porfirio de Tiro - Filósofo Neoplatónico</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* CSS será incluido aquí */
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-scroll"></i>
+                <span>Porfirio de Tiro</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#biografia">Biografía</a></li>
+                <li><a href="#obras">Obras</a></li>
+                <li><a href="#pensamiento">Pensamiento</a></li>
+                <li><a href="#influencias">Influencias</a></li>
+                <li><a href="#contexto">Contexto</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#fuentes">Fuentes</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Porfirio de Tiro</h1>
+                <p class="hero-subtitle">Filósofo Neoplatónico (c. 234-305 d.C.)</p>
+                <p class="hero-description">
+                    "El alma que se ha liberado de las pasiones y se ha purificado mediante la filosofía 
+                    puede ascender hacia la contemplación de lo divino."
+                </p>
+                <button class="cta-button" onclick="scrollToSection('biografia')">
+                    Explorar su Filosofía
+                </button>
+            </div>
+            <div class="hero-image">
+                <div class="philosophical-symbol">
+                    <i class="fas fa-infinity"></i>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Biografía -->
+    <section id="biografia" class="section">
+        <div class="container">
+            <h2 class="section-title">Biografía</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>c. 234 d.C. - Nacimiento</h3>
+                        <p>Nace en Tiro, Fenicia (actual Líbano), en una familia griega. Su nombre original era Malco, que significa "rey" en semítico.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>c. 263 d.C. - Encuentro con Plotino</h3>
+                        <p>Se traslada a Roma donde se convierte en discípulo de Plotino, el fundador del neoplatonismo. Permanece con él durante seis años.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>c. 268 d.C. - Crisis Espiritual</h3>
+                        <p>Experimenta una profunda crisis que lo lleva a considerar el suicidio. Plotino lo envía a Sicilia para su recuperación.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>c. 301 d.C. - Edición de las Enéadas</h3>
+                        <p>Edita y publica las obras de Plotino bajo el título "Enéadas", preservando así el pensamiento neoplatónico.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>c. 305 d.C. - Muerte</h3>
+                        <p>Muere en Roma, dejando una vasta obra filosófica que influirá en el pensamiento occidental durante siglos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Obras Principales -->
+    <section id="obras" class="section dark">
+        <div class="container">
+            <h2 class="section-title">Obras Principales</h2>
+            <div class="works-grid">
+                <div class="work-card">
+                    <div class="work-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Isagoge</h3>
+                    <p>Introducción a las Categorías de Aristóteles que se convirtió en texto básico de lógica medieval.</p>
+                    <div class="work-links">
+                        <a href="https://archive.org/details/porphyriusisagog00porp" target="_blank">
+                            <i class="fas fa-book"></i> Archive.org
+                        </a>
+                        <a href="https://www.cervantesvirtual.com/obra/isagoge-introduccion-a-las-categorias-de-aristoteles/" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Cervantes Virtual
+                        </a>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-icon">
+                        <i class="fas fa-user-minus"></i>
+                    </div>
+                    <h3>Contra los Cristianos</h3>
+                    <p>Crítica sistemática al cristianismo en 15 libros, obra perdida pero conocida por refutaciones.</p>
+                    <div class="work-links">
+                        <a href="https://archive.org/details/porphyryagainstc00porp" target="_blank">
+                            <i class="fas fa-book"></i> Fragmentos
+                        </a>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sobre la Abstinencia</h3>
+                    <p>Tratado sobre vegetarianismo y purificación espiritual a través de la dieta.</p>
+                    <div class="work-links">
+                        <a href="https://archive.org/details/porphyryonabstin00porp" target="_blank">
+                            <i class="fas fa-book"></i> Archive.org
+                        </a>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Vida de Plotino</h3>
+                    <p>Biografía de su maestro Plotino y prefacio a las Enéadas.</p>
+                    <div class="work-links">
+                        <a href="https://archive.org/details/plotinusennead01plot" target="_blank">
+                            <i class="fas fa-book"></i> Archive.org
+                        </a>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-icon">
+                        <i class="fas fa-cave"></i>
+                    </div>
+                    <h3>El Antro de las Ninfas</h3>
+                    <p>Interpretación alegórica del episodio homérico sobre el antro de las ninfas en Ítaca.</p>
+                    <div class="work-links">
+                        <a href="https://archive.org/details/porphyryonthecav00porp" target="_blank">
+                            <i class="fas fa-book"></i> Archive.org
+                        </a>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Carta a Marcela</h3>
+                    <p>Tratado ético dirigido a su esposa sobre la vida filosófica y la virtud.</p>
+                    <div class="work-links">
+                        <a href="https://archive.org/details/porphyryletterma00porp" target="_blank">
+                            <i class="fas fa-book"></i> Archive.org
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pensamiento Filosófico -->
+    <section id="pensamiento" class="section">
+        <div class="container">
+            <h2 class="section-title">Pensamiento Filosófico</h2>
+            <div class="philosophy-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-button active" onclick="showTab('metafisica')">Metafísica</button>
+                    <button class="tab-button" onclick="showTab('etica')">Ética</button>
+                    <button class="tab-button" onclick="showTab('logica')">Lógica</button>
+                    <button class="tab-button" onclick="showTab('religion')">Religión</button>
+                </div>
+                <div class="tab-content">
+                    <div id="metafisica" class="tab-panel active">
+                        <div class="philosophy-content">
+                            <h3>Metafísica Neoplatónica</h3>
+                            <p>Porfirio desarrolló la metafísica de Plotino, estableciendo una jerarquía ontológica que va desde el Uno hasta la materia:</p>
+                            <div class="hierarchy">
+                                <div class="level">
+                                    <div class="level-name">El Uno</div>
+                                    <div class="level-description">Principio absoluto, más allá del ser y del pensamiento</div>
+                                </div>
+                                <div class="level">
+                                    <div class="level-name">El Intelecto</div>
+                                    <div class="level-description">Emanación del Uno que contiene las Ideas platónicas</div>
+                                </div>
+                                <div class="level">
+                                    <div class="level-name">El Alma</div>
+                                    <div class="level-description">Principio animador que conecta lo inteligible con lo sensible</div>
+                                </div>
+                                <div class="level">
+                                    <div class="level-name">La Materia</div>
+                                    <div class="level-description">Principio pasivo y receptivo, límite de la emanación</div>
+                                </div>
+                            </div>
+                            <blockquote>
+                                "El Uno es la fuente de toda realidad, pero él mismo está más allá de toda determinación. 
+                                Es el principio que, sin moverse, produce todas las cosas por emanación necesaria."
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div id="etica" class="tab-panel">
+                        <div class="philosophy-content">
+                            <h3>Ética y Purificación</h3>
+                            <p>La ética porfiriana se centra en la purificación del alma para su ascenso hacia lo divino:</p>
+                            <div class="virtues-grid">
+                                <div class="virtue-card">
+                                    <h4>Virtudes Cívicas</h4>
+                                    <p>Justicia, templanza, fortaleza y prudencia en la vida social</p>
+                                </div>
+                                <div class="virtue-card">
+                                    <h4>Virtudes Purificativas</h4>
+                                    <p>Liberación de las pasiones y apegos mundanos</p>
+                                </div>
+                                <div class="virtue-card">
+                                    <h4>Virtudes Contemplativas</h4>
+                                    <p>Ejercicio del intelecto en la contemplación de las Ideas</p>
+                                </div>
+                                <div class="virtue-card">
+                                    <h4>Virtudes Paradigmáticas</h4>
+                                    <p>Identificación con los arquetipos divinos</p>
+                                </div>
+                            </div>
+                            <blockquote>
+                                "La filosofía es una purificación y una liberación del alma. El filósofo debe apartarse 
+                                de lo sensible y dirigirse hacia lo inteligible mediante la práctica de las virtudes."
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div id="logica" class="tab-panel">
+                        <div class="philosophy-content">
+                            <h3>Lógica y Dialéctica</h3>
+                            <p>Porfirio sistematizó la lógica aristotélica, especialmente en su obra "Isagoge":</p>
+                            <div class="logic-concepts">
+                                <div class="concept">
+                                    <h4>Árbol de Porfirio</h4>
+                                    <p>Esquema jerárquico de géneros y especies que influyó en la lógica medieval</p>
+                                </div>
+                                <div class="concept">
+                                    <h4>Cinco Predicables</h4>
+                                    <p>Género, especie, diferencia, propio y accidente como modos de predicación</p>
+                                </div>
+                                <div class="concept">
+                                    <h4>Problema de los Universales</h4>
+                                    <p>Planteamiento sobre la naturaleza de los conceptos universales</p>
+                                </div>
+                            </div>
+                            <blockquote>
+                                "Sobre los géneros y las especies, si subsisten o solo se encuentran en los 
+                                pensamientos puros, y si subsistiendo son corporales o incorporales, 
+                                y si están separados o en las cosas sensibles: me abstendré de hablar."
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div id="religion" class="tab-panel">
+                        <div class="philosophy-content">
+                            <h3>Filosofía Religiosa</h3>
+                            <p>Porfirio desarrolló una filosofía religiosa que armonizaba el paganismo con el platonismo:</p>
+                            <div class="religious-themes">
+                                <div class="theme">
+                                    <h4>Teúrgia</h4>
+                                    <p>Práctica ritual para la unión con lo divino</p>
+                                </div>
+                                <div class="theme">
+                                    <h4>Crítica al Cristianismo</h4>
+                                    <p>Análisis racional de las escrituras cristianas</p>
+                                </div>
+                                <div class="theme">
+                                    <h4>Vegetarianismo</h4>
+                                    <p>Abstinencia de carne por purificación espiritual</p>
+                                </div>
+                                <div class="theme">
+                                    <h4>Interpretación Alegórica</h4>
+                                    <p>Lectura simbólica de los mitos y textos sagrados</p>
+                                </div>
+                            </div>
+                            <blockquote>
+                                "Los dioses no necesitan sacrificios cruentos. Lo que verdaderamente les agrada 
+                                es la pureza del alma y el ejercicio de la virtud."
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Influencias -->
+    <section id="influencias" class="section dark">
+        <div class="container">
+            <h2 class="section-title">Influencias Filosóficas</h2>
+            <div class="influences-container">
+                <div class="influences-received">
+                    <h3>Influencias Recibidas</h3>
+                    <div class="influence-cards">
+                        <div class="influence-card">
+                            <div class="influence-icon">
+                                <i class="fas fa-columns"></i>
+                            </div>
+                            <h4>Platón</h4>
+                            <p>Teoría de las Ideas, dialéctica ascendente y dualismo ontológico</p>
+                        </div>
+                        <div class="influence-card">
+                            <div class="influence-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <h4>Aristóteles</h4>
+                            <p>Lógica, categorías y metodología científica</p>
+                        </div>
+                        <div class="influence-card">
+                            <div class="influence-icon">
+                                <i class="fas fa-sun"></i>
+                            </div>
+                            <h4>Plotino</h4>
+                            <p>Metafísica emanacionista y mística del Uno</p>
+                        </div>
+                        <div class="influence-card">
+                            <div class="influence-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h4>Pitagóricos</h4>
+                            <p>Purificación del alma y armonía cósmica</p>
+                        </div>
+                        <div class="influence-card">
+                            <div class="influence-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <h4>Estoicos</h4>
+                            <p>Ética de las virtudes y filosofía práctica</p>
+                        </div>
+                        <div class="influence-card">
+                            <div class="influence-icon">
+                                <i class="fas fa-star-and-crescent"></i>
+                            </div>
+                            <h4>Tradición Oriental</h4>
+                            <p>Prácticas teúrgicas y sabiduría caldea</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="influences-given">
+                    <h3>Influencias Ejercidas</h3>
+                    <div class="influence-cards">
+                        <div class="influence-card">
+                            <div class="influence-icon">
+                                <i class="fas fa-cross"></i>
+                            </div>
+                            <h4>Cristianismo</h4>
+                            <p>Teología negativa y jerarquías angelicales (Pseudo-Dionisio)</p>
+                        </div>
+                        <div class="influence-card">
+                            <div class="influence-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>Islam</h4>
+                            <p>Filosofía islámica medieval (Al-Farabi, Avicena)</p>
+                        </div>
+                        <div class="influence-card">
+                            <div class="influence-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h4>Escolástica</h4>
+                            <p>Lógica medieval y problema de los universales</p>
+                        </div>
+                        <div class="influence-card">
+                            <div class="influence-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h4>Renacimiento</h4>
+                            <p>Neoplatonismo renacentista (Ficino, Pico della Mirandola)</p>
+                        </div>
+                        <div class="influence-card">
+                            <div class="influence-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4>Filosofía Moderna</h4>
+                            <p>Idealismo alemán y filosofía de la religión</p>
+                        </div>
+                        <div class="influence-card">
+                            <div class="influence-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4>Filosofía Contemporánea</h4>
+                            <p>Estudios sobre neoplatonismo y filosofía antigua</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contexto Histórico -->
+    <section id="contexto" class="section">
+        <div class="container">
+            <h2 class="section-title">Contexto Histórico y Filosófico</h2>
+            <div class="context-grid">
+                <div class="context-card">
+                    <div class="context-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Imperio Romano Tardío</h3>
+                    <p>Período de crisis política y transformación cultural. Los emperadores-filósofos 
+                    como Marco Aurelio dan paso a una época de inestabilidad que busca nuevas 
+                    formas de espiritualidad.</p>
+                </div>
+                <div class="context-card">
+                    <div class="context-icon">
+                        <i class="fas fa-praying-hands"></i>
+                    </div>
+                    <h3>Expansión del Cristianismo</h3>
+                    <p>El cristianismo se extiende por el Imperio Romano, generando debates 
+                    teológicos y filosóficos. Porfirio se convierte en uno de sus principales 
+                    críticos intelectuales.</p>
+                </div>
+                <div class="context-card">
+                    <div class="context-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3>Escuelas Filosóficas</h3>
+                    <p>Coexisten múltiples corrientes: neoplatonismo, estoicismo tardío, 
+                    aristotelismo, y nuevas síntesis filosófico-religiosas que buscan 
+                    la sabiduría última.</p>
+                </div>
+                <div class="context-card">
+                    <div class="context-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Sincretismo Cultural</h3>
+                    <p>Fusión de tradiciones griegas, romanas y orientales. La filosofía 
+                    se mezcla con prácticas religiosas, creando nuevas formas de 
+                    espiritualidad intelectual.</p>
+                </div>
+                <div class="context-card">
+                    <div class="context-icon">
+                        <i class="fas fa-scroll"></i>
+                    </div>
+                    <h3>Preservación del Saber</h3>
+                    <p>Los filósofos neoplatónicos como Porfirio se dedican a preservar y 
+                    comentar la tradición filosófica griega, transmitiendo el conocimiento 
+                    a las generaciones futuras.</p>
+                </div>
+                <div class="context-card">
+                    <div class="context-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3>Renacimiento de la Teúrgia</h3>
+                    <p>Resurgimiento del interés por prácticas rituales y místicas como 
+                    medios de conocimiento y unión con lo divino, influenciando el 
+                    desarrollo del neoplatonismo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos -->
+    <section id="videos" class="section dark">
+        <div class="container">
+            <h2 class="section-title">Videos sobre Porfirio</h2>
+            <div class="videos-grid">
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3>Porfirio y el Neoplatonismo</h3>
+                    <p>Análisis de la filosofía porfiriana y su lugar en la tradición neoplatónica</p>
+                    <a href="https://www.youtube.com/results?search_query=porfirio+neoplatonismo+filosofia" target="_blank">
+                        Ver en YouTube
+                    </a>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3>La Isagoge de Porfirio</h3>
+                    <p>Explicación de la obra más influyente de Porfirio sobre lógica aristotélica</p>
+                    <a href="https://www.youtube.com/results?search_query=isagoge+porfirio+logica" target="_blank">
+                        Ver en YouTube
+                    </a>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3>Porfirio contra el Cristianismo</h3>
+                    <p>Análisis de la crítica porfiriana al cristianismo primitivo</p>
+                    <a href="https://www.youtube.com/results?search_query=porfirio+contra+cristianismo" target="_blank">
+                        Ver en YouTube
+                    </a>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3>Filosofía Antigua Tardía</h3>
+                    <p>Contexto histórico y filosófico del período de Porfirio</p>
+                    <a href="https://www.youtube.com/results?search_query=filosofia+antigua+tardia+neoplatonismo" target="_blank">
+                        Ver en YouTube
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fuentes -->
+    <section id="fuentes" class="section">
+        <div class="container">
+            <h2 class="section-title">Fuentes y Referencias</h2>
+            <div class="sources-grid">
+                <div class="source-category">
+                    <h3>Enciclopedias Especializadas</h3>
+                    <ul class="source-list">
+                        <li>
+                            <a href="https://www.philosophica.info/archivo/2009/voces/porfirio/Porfirio.html" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Philosophica - Porfirio de Tiro
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://es.wikipedia.org/wiki/Porfirio" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Wikipedia - Porfirio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.webdianoia.com/medieval/porfirio.htm" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Webdianoia - Porfirio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.herdereditorial.com/enciclopedia-herder" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Enciclopedia Herder - Porfirio
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="source-category">
+                    <h3>Textos Académicos</h3>
+                    <ul class="source-list">
+                        <li>
+                            <a href="https://plato.stanford.edu/entries/porphyry/" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Stanford Encyclopedia of Philosophy - Porphyry
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.academia.edu/s/porphyry-neoplatonism" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Academia.edu - Estudios sobre Porfirio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.jstor.org/action/doBasicSearch?Query=porphyry+neoplatonism" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                JSTOR - Artículos sobre Porfirio
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="source-category">
+                    <h3>Bibliotecas Digitales</h3>
+                    <ul class="source-list">
+                        <li>
+                            <a href="https://archive.org/search.php?query=porphyry+philosophy" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Internet Archive - Obras de Porfirio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cervantesvirtual.com/portales/filosofia_antigua/" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Biblioteca Cervantes Virtual - Filosofía Antigua
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.perseus.tufts.edu/hopper/" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Perseus Digital Library - Textos Clásicos
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="source-category">
+                    <h3>Recursos Multimedia</h3>
+                    <ul class="source-list">
+                        <li>
+                            <a href="https://www.youtube.com/results?search_query=porfirio+filosofia+neoplatonismo" target="_blank">
+                                <i class="fab fa-youtube"></i>
+                                YouTube - Videos sobre Porfirio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://open.spotify.com/search/filosofia%20antigua" target="_blank">
+                                <i class="fab fa-spotify"></i>
+                                Spotify - Podcasts de Filosofía Antigua
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.ivoox.com/buscar_buscador_1.html?voz=porfirio+filosofia" target="_blank">
+                                <i class="fas fa-podcast"></i>
+                                iVoox - Audios sobre Porfirio
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Porfirio de Tiro</h3>
+                    <p>Filósofo neoplatónico cuyo legado perdura en la filosofía occidental.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#biografia">Biografía</a></li>
+                        <li><a href="#obras">Obras</a></li>
+                        <li><a href="#pensamiento">Pensamiento</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="#videos">Videos</a></li>
+                        <li><a href="#fuentes">Fuentes</a></li>
+                        <li><a href="https://archive.org" target="_blank">Archive.org</a></li>
+                        <li><a href="https://plato.stanford.edu" target="_blank">Stanford Encyclopedia</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Página web educativa sobre Porfirio de Tiro. Contenido libre para uso académico.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript será incluido aquí
+    </script>
+</body>
+</html>
