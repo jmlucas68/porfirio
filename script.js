@@ -1,363 +1,979 @@
-// Navegación y Scroll Suave
-document.addEventListener('DOMContentLoaded', function() {
-    // Navegación móvil
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-
-    hamburger.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
-
-    // Cerrar menú al hacer clic en un enlace
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', function() {
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
-        });
-    });
-
-    // Scroll suave para enlaces internos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // Cambiar estilo del navbar al hacer scroll
-    window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(44, 62, 80, 0.98)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-        } else {
-            navbar.style.background = 'rgba(44, 62, 80, 0.95)';
-            navbar.style.boxShadow = 'none';
-        }
-    });
-
-    // Animaciones al hacer scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observar elementos para animaciones
-    document.querySelectorAll('.timeline-item, .work-card, .context-card, .influence-card, .video-card, .source-category').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-        observer.observe(el);
-    });
-
-    // Efecto de paralaje para el hero
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const heroImage = document.querySelector('.hero-image');
-        if (heroImage) {
-            heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
-        }
-    });
-
-    // Contador animado para fechas
-    function animateCounter(element, start, end, duration) {
-        let startTime = null;
-        
-        function animation(currentTime) {
-            if (startTime === null) startTime = currentTime;
-            const timeElapsed = currentTime - startTime;
-            const progress = Math.min(timeElapsed / duration, 1);
-            
-            const value = Math.floor(progress * (end - start) + start);
-            element.textContent = value;
-            
-            if (progress < 1) {
-                requestAnimationFrame(animation);
-            }
-        }
-        
-        requestAnimationFrame(animation);
-    }
-
-    // Inicializar contadores cuando sean visibles
-    const counterObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const counter = entry.target;
-                const targetValue = parseInt(counter.dataset.target);
-                animateCounter(counter, 0, targetValue, 2000);
-                counterObserver.unobserve(counter);
-            }
-        });
-    });
-
-    // Efectos de hover para cards
-    document.querySelectorAll('.work-card, .context-card, .influence-card').forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-            this.style.boxShadow = '0 30px 60px rgba(0,0,0,0.2)';
-        });
-
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-            this.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
-        });
-    });
-
-    // Efecto de escritura para citas
-    function typeWriter(element, text, speed = 50) {
-        let i = 0;
-        element.innerHTML = '';
-        
-        function type() {
-            if (i < text.length) {
-                element.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(type, speed);
-            }
-        }
-        
-        type();
-    }
-
-    // Inicializar efecto de escritura para blockquotes
-    const quoteObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const quote = entry.target;
-                const originalText = quote.textContent;
-                typeWriter(quote, originalText, 30);
-                quoteObserver.unobserve(quote);
-            }
-        });
-    });
-
-    document.querySelectorAll('blockquote').forEach(quote => {
-        quoteObserver.observe(quote);
-    });
-
-    // Preloader simple
-    window.addEventListener('load', function() {
-        document.body.classList.add('loaded');
-    });
-});
-
-// Función para mostrar tabs
-function showTab(tabName) {
-    // Ocultar todos los panels
-    document.querySelectorAll('.tab-panel').forEach(panel => {
-        panel.classList.remove('active');
-    });
-    
-    // Remover clase active de todos los botones
-    document.querySelectorAll('.tab-button').forEach(button => {
-        button.classList.remove('active');
-    });
-    
-    // Mostrar el panel seleccionado
-    document.getElementById(tabName).classList.add('active');
-    
-    // Activar el botón correspondiente
-    event.target.classList.add('active');
+/* Reset y Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-// Función para scroll suave a sección
-function scrollToSection(sectionId) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-        element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --text-light: #666;
+    --background-color: #f8f9fa;
+    --dark-bg: #2c3e50;
+    --white: #ffffff;
+    --gold: #f39c12;
+    --purple: #8e44ad;
+    --green: #27ae60;
+    --orange: #e67e22;
+    --red: #e74c3c;
+    --blue: #3498db;
+    --font-primary: 'Playfair Display', serif;
+    --font-secondary: 'Inter', sans-serif;
+    --shadow: 0 10px 30px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: var(--font-secondary);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navegación */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(44, 62, 80, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: var(--transition);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-primary);
+}
+
+.nav-logo i {
+    color: var(--gold);
+    font-size: 1.8rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: var(--gold);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: var(--transition);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    margin: 3px 0;
+    transition: var(--transition);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,0 1000,300 1000,1000 0,700"/></svg>');
+    background-size: cover;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-family: var(--font-primary);
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--white), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--gold);
+    font-weight: 500;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    font-style: italic;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.cta-button {
+    background: linear-gradient(45deg, var(--gold), var(--orange));
+    color: var(--white);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(243, 156, 18, 0.4);
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.philosophical-symbol {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--gold), var(--orange));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: var(--white);
+    animation: rotate 20s linear infinite;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    color: var(--gold);
+    animation: bounce 2s infinite;
+}
+
+/* Secciones */
+.section {
+    padding: 100px 0;
+}
+
+.section.dark {
+    background: var(--dark-bg);
+    color: var(--white);
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.section.dark .section-title {
+    color: var(--white);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--gold);
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: var(--gold);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    padding: 20px 40px;
+    position: relative;
+    background: transparent;
+    width: 50%;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-marker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--gold);
+    border-radius: 50%;
+    top: 15px;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd) .timeline-marker {
+    right: -10px;
+}
+
+.timeline-item:nth-child(even) .timeline-marker {
+    left: -10px;
+}
+
+.timeline-content {
+    padding: 20px;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.timeline-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+/* Obras Grid */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.work-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.section.dark .work-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.work-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
+.work-icon {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.work-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.section.dark .work-card h3 {
+    color: var(--white);
+}
+
+.work-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.work-links a {
+    background: var(--gold);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.work-links a:hover {
+    background: var(--orange);
+    transform: translateY(-2px);
+}
+
+/* Filosofía Tabs */
+.philosophy-tabs {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    padding: 12px 30px;
+    background: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.tab-button.active,
+.tab-button:hover {
+    background: var(--gold);
+    color: var(--white);
+}
+
+.tab-panel {
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+.philosophy-content {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.philosophy-content h3 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.philosophy-content blockquote {
+    background: linear-gradient(45deg, var(--gold), var(--orange));
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    font-style: italic;
+    font-size: 1.2rem;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.philosophy-content blockquote::before {
+    content: '"';
+    font-size: 4rem;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    opacity: 0.3;
+}
+
+/* Jerarquía Metafísica */
+.hierarchy {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.level {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    border-radius: 10px;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.level-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    min-width: 150px;
+}
+
+.level-description {
+    flex: 1;
+    font-size: 1.1rem;
+}
+
+/* Virtudes Grid */
+.virtues-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.virtue-card {
+    background: linear-gradient(45deg, var(--purple), var(--blue));
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: var(--transition);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.virtue-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(142, 68, 173, 0.3);
+}
+
+.virtue-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+/* Conceptos Lógicos */
+.logic-concepts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.concept {
+    background: linear-gradient(45deg, var(--green), var(--blue));
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.concept h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+/* Temas Religiosos */
+.religious-themes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.theme {
+    background: linear-gradient(45deg, var(--red), var(--orange));
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.theme h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+/* Influencias */
+.influences-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.influences-received h3,
+.influences-given h3 {
+    color: var(--gold);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.influence-cards {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.influence-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: var(--transition);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.influence-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.influence-icon {
+    font-size: 2rem;
+    color: var(--gold);
+    min-width: 50px;
+}
+
+.influence-card h4 {
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.influence-card p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+/* Contexto Grid */
+.context-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.context-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.context-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
+.context-icon {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.context-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Videos Grid */
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.video-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: var(--transition);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.video-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.video-thumbnail {
+    font-size: 4rem;
+    color: var(--red);
+    margin-bottom: 1rem;
+}
+
+.video-card h3 {
+    color: var(--white);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.video-card p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+}
+
+.video-card a {
+    background: var(--red);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.video-card a:hover {
+    background: var(--orange);
+    transform: translateY(-2px);
+}
+
+/* Fuentes Grid */
+.sources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.source-category {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.source-category h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.source-list {
+    list-style: none;
+}
+
+.source-list li {
+    margin-bottom: 1rem;
+}
+
+.source-list a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.source-list a:hover {
+    background: var(--background-color);
+    color: var(--primary-color);
+}
+
+/* Footer */
+.footer {
+    background: var(--dark-bg);
+    color: var(--white);
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: var(--white);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-section a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-// Función para búsqueda (opcional)
-function searchContent() {
-    const searchTerm = document.getElementById('search-input').value.toLowerCase();
-    const sections = document.querySelectorAll('.section');
-    
-    sections.forEach(section => {
-        const content = section.textContent.toLowerCase();
-        if (content.includes(searchTerm)) {
-            section.style.display = 'block';
-        } else {
-            section.style.display = 'none';
-        }
-    });
-}
-
-// Función para cambiar tema (opcional)
-function toggleTheme() {
-    const body = document.body;
-    body.classList.toggle('dark-theme');
-    
-    // Guardar preferencia
-    localStorage.setItem('theme', body.classList.contains('dark-theme') ? 'dark' : 'light');
-}
-
-// Cargar tema guardado
-document.addEventListener('DOMContentLoaded', function() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-theme');
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
-});
-
-// Función para compartir contenido
-function shareContent() {
-    if (navigator.share) {
-        navigator.share({
-            title: 'Porfirio de Tiro - Filósofo Neoplatónico',
-            text: 'Descubre la vida y obra de Porfirio de Tiro, discípulo de Plotino y gran filósofo neoplatónico.',
-            url: window.location.href
-        });
-    } else {
-        // Fallback para navegadores que no soportan Web Share API
-        navigator.clipboard.writeText(window.location.href);
-        alert('Enlace copiado al portapapeles');
+    to {
+        opacity: 1;
     }
 }
 
-// Función para imprimir página
-function printPage() {
-    window.print();
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-// Easter egg: Konami Code
-let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
-let konamiIndex = 0;
-
-document.addEventListener('keydown', function(e) {
-    if (e.code === konamiCode[konamiIndex]) {
-        konamiIndex++;
-        if (konamiIndex === konamiCode.length) {
-            // Activar modo especial
-            document.body.classList.add('philosophical-mode');
-            alert('¡Modo Filosófico Activado! 🏛️');
-            konamiIndex = 0;
-        }
-    } else {
-        konamiIndex = 0;
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
     }
-});
-
-// Función para generar citas aleatorias
-const porphyryQuotes = [
-    "El alma que se ha liberado de las pasiones y se ha purificado mediante la filosofía puede ascender hacia la contemplación de lo divino.",
-    "El Uno es la fuente de toda realidad, pero él mismo está más allá de toda determinación.",
-    "La filosofía es una purificación y una liberación del alma.",
-    "Los dioses no necesitan sacrificios cruentos. Lo que verdaderamente les agrada es la pureza del alma y el ejercicio de la virtud.",
-    "Sobre los géneros y las especies, si subsisten o solo se encuentran en los pensamientos puros, me abstendré de hablar."
-];
-
-function showRandomQuote() {
-    const randomQuote = porphyryQuotes[Math.floor(Math.random() * porphyryQuotes.length)];
-    
-    // Crear elemento de cita flotante
-    const quoteElement = document.createElement('div');
-    quoteElement.className = 'floating-quote';
-    quoteElement.innerHTML = `
-        <blockquote>
-            "${randomQuote}"
-            <cite>- Porfirio de Tiro</cite>
-        </blockquote>
-        <button onclick="this.parentElement.remove()">×</button>
-    `;
-    
-    document.body.appendChild(quoteElement);
-    
-    // Remover después de 10 segundos
-    setTimeout(() => {
-        if (quoteElement.parentElement) {
-            quoteElement.remove();
-        }
-    }, 10000);
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-// Agregar estilos CSS para la cita flotante
-const floatingQuoteStyle = document.createElement('style');
-floatingQuoteStyle.textContent = `
-    .floating-quote {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: linear-gradient(45deg, var(--gold), var(--orange));
-        color: white;
-        padding: 1rem;
-        border-radius: 10px;
-        max-width: 300px;
-        z-index: 10000;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        animation: slideInRight 0.5s ease-out;
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
     }
-    
-    .floating-quote blockquote {
-        margin: 0;
-        font-style: italic;
-        font-size: 0.9rem;
+    40% {
+        transform: translateY(-10px);
     }
-    
-    .floating-quote cite {
-        display: block;
-        margin-top: 0.5rem;
-        font-size: 0.8rem;
-        text-align: right;
+    60% {
+        transform: translateY(-5px);
     }
-    
-    .floating-quote button {
-        position: absolute;
-        top: 5px;
-        right: 10px;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 1.2rem;
-        cursor: pointer;
-        width: 20px;
-        height: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
         display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .timeline::after {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 25px;
+        text-align: left;
+    }
+
+    .timeline-item::before {
+        left: 10px;
+    }
+
+    .timeline-marker {
+        left: 10px !important;
+    }
+
+    .influences-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .works-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tab-buttons {
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
     }
-    
-    @keyframes slideInRight {
-        from {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-    
-    .philosophical-mode {
-        filter: sepia(0.3) hue-rotate(30deg);
-    }
-    
-    .philosophical-mode .hero {
-        background: linear-gradient(135deg, #8B4513 0%, #DAA520 100%);
-    }
-`;
 
-document.head.appendChild(floatingQuoteStyle);
+    .philosophy-content {
+        padding: 2rem;
+    }
 
-// Mostrar cita aleatoria cada 30 segundos
-setInterval(showRandomQuote, 30000);
+    .hierarchy {
+        gap: 0.5rem;
+    }
+
+    .level {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .level-name {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .work-card,
+    .context-card,
+    .source-category {
+        padding: 1.5rem;
+    }
+
+    .philosophy-content {
+        padding: 1.5rem;
+    }
+
+    .timeline-content {
+        padding: 15px;
+    }
+}

@@ -1,1 +1,1 @@
-Initial commit
+Refactor: Actualiza script y elimina fichero temporal
