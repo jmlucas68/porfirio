@@ -2,2632 +2,746 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porfirio de Tiro - Filósofo Neoplatónico</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Porfirio de Tiro – Vida, Obra y Pensamiento</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Página visual, moderna y dinámica sobre Porfirio de Tiro: biografía, obras, citas, ideas clave, influencias, contexto, vídeos, libros y enlaces de referencia.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <style>
-/* Reset y Variables */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #e74c3c;
-    --text-color: #333;
-    --text-light: #666;
-    --background-color: #f8f9fa;
-    --dark-bg: #2c3e50;
-    --white: #ffffff;
-    --gold: #f39c12;
-    --purple: #8e44ad;
-    --green: #27ae60;
-    --orange: #e67e22;
-    --red: #e74c3c;
-    --blue: #3498db;
-    --font-primary: 'Playfair Display', serif;
-    --font-secondary: 'Inter', sans-serif;
-    --shadow: 0 10px 30px rgba(0,0,0,0.1);
-    --transition: all 0.3s ease;
-}
-
-body {
-    font-family: var(--font-secondary);
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
-    scroll-behavior: smooth;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Navegación */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(44, 62, 80, 0.95);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    padding: 1rem 0;
-    transition: var(--transition);
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--white);
-    font-size: 1.5rem;
-    font-weight: 700;
-    font-family: var(--font-primary);
-}
-
-.nav-logo i {
-    color: var(--gold);
-    font-size: 1.8rem;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-menu a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 500;
-    transition: var(--transition);
-    position: relative;
-}
-
-.nav-menu a:hover {
-    color: var(--gold);
-}
-
-.nav-menu a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--gold);
-    transition: var(--transition);
-}
-
-.nav-menu a:hover::after {
-    width: 100%;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background: var(--white);
-    margin: 3px 0;
-    transition: var(--transition);
-}
-
-/* Hero Section */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: var(--white);
-    position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,0 1000,300 1000,1000 0,700"/></svg>');
-    background-size: cover;
-}
-
-.hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-}
-
-.hero-title {
-    font-family: var(--font-primary);
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    background: linear-gradient(45deg, var(--white), var(--gold));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: fadeInUp 1s ease-out;
-}
-
-.hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: var(--gold);
-    font-weight: 500;
-    animation: fadeInUp 1s ease-out 0.2s both;
-}
-
-.hero-description {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    line-height: 1.8;
-    font-style: italic;
-    animation: fadeInUp 1s ease-out 0.4s both;
-}
-
-.cta-button {
-    background: linear-gradient(45deg, var(--gold), var(--orange));
-    color: var(--white);
-    padding: 15px 30px;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-    animation: fadeInUp 1s ease-out 0.6s both;
-}
-
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 20px 40px rgba(243, 156, 18, 0.4);
-}
-
-.hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: fadeInUp 1s ease-out 0.8s both;
-}
-
-.philosophical-symbol {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, var(--gold), var(--orange));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4rem;
-    color: var(--white);
-    animation: rotate 20s linear infinite;
-}
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.5rem;
-    color: var(--gold);
-    animation: bounce 2s infinite;
-}
-
-/* Secciones */
-.section {
-    padding: 100px 0;
-}
-
-.section.dark {
-    background: var(--dark-bg);
-    color: var(--white);
-}
-
-.section-title {
-    font-family: var(--font-primary);
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 4rem;
-    color: var(--primary-color);
-    position: relative;
-}
-
-.section.dark .section-title {
-    color: var(--white);
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background: var(--gold);
-}
-
-/* Timeline */
-.timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 2px;
-    background: var(--gold);
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -1px;
-}
-
-.timeline-item {
-    padding: 20px 40px;
-    position: relative;
-    background: transparent;
-    width: 50%;
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.timeline-item:nth-child(odd) {
-    left: 0;
-    text-align: right;
-}
-
-.timeline-item:nth-child(even) {
-    left: 50%;
-    text-align: left;
-}
-
-.timeline-marker {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: var(--gold);
-    border-radius: 50%;
-    top: 15px;
-    z-index: 1;
-}
-
-.timeline-item:nth-child(odd) .timeline-marker {
-    right: -10px;
-}
-
-.timeline-item:nth-child(even) .timeline-marker {
-    left: -10px;
-}
-
-.timeline-content {
-    padding: 20px;
-    background: var(--white);
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-}
-
-.timeline-content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-.timeline-content h3 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-}
-
-/* Obras Grid */
-.works-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.work-card {
-    background: var(--white);
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    text-align: center;
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.section.dark .work-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-}
-
-.work-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-}
-
-.work-icon {
-    font-size: 3rem;
-    color: var(--gold);
-    margin-bottom: 1rem;
-}
-
-.work-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-.section.dark .work-card h3 {
-    color: var(--white);
-}
-
-.work-links {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.work-links a {
-    background: var(--gold);
-    color: var(--white);
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: var(--transition);
-    font-size: 0.9rem;
-}
-
-.work-links a:hover {
-    background: var(--orange);
-    transform: translateY(-2px);
-}
-
-/* Filosofía Tabs */
-.philosophy-tabs {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.tab-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-    flex-wrap: wrap;
-}
-
-.tab-button {
-    padding: 12px 30px;
-    background: transparent;
-    border: 2px solid var(--gold);
-    color: var(--gold);
-    border-radius: 25px;
-    cursor: pointer;
-    transition: var(--transition);
-    font-weight: 600;
-}
-
-.tab-button.active,
-.tab-button:hover {
-    background: var(--gold);
-    color: var(--white);
-}
-
-.tab-panel {
-    display: none;
-    animation: fadeIn 0.5s ease-out;
-}
-
-.tab-panel.active {
-    display: block;
-}
-
-.philosophy-content {
-    background: var(--white);
-    padding: 3rem;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-}
-
-.philosophy-content h3 {
-    color: var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.philosophy-content blockquote {
-    background: linear-gradient(45deg, var(--gold), var(--orange));
-    color: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    font-style: italic;
-    font-size: 1.2rem;
-    margin: 2rem 0;
-    position: relative;
-}
-
-.philosophy-content blockquote::before {
-    content: '"';
-    font-size: 4rem;
-    position: absolute;
-    top: -10px;
-    left: 20px;
-    opacity: 0.3;
-}
-
-/* Jerarquía Metafísica */
-.hierarchy {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin: 2rem 0;
-}
-
-.level {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    padding: 1.5rem;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    color: var(--white);
-    border-radius: 10px;
-    animation: slideInLeft 0.8s ease-out;
-}
-
-.level-name {
-    font-size: 1.3rem;
-    font-weight: 700;
-    min-width: 150px;
-}
-
-.level-description {
-    flex: 1;
-    font-size: 1.1rem;
-}
-
-/* Virtudes Grid */
-.virtues-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.virtue-card {
-    background: linear-gradient(45deg, var(--purple), var(--blue));
-    color: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    transition: var(--transition);
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.virtue-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(142, 68, 173, 0.3);
-}
-
-.virtue-card h4 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-}
-
-/* Conceptos Lógicos */
-.logic-concepts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.concept {
-    background: linear-gradient(45deg, var(--green), var(--blue));
-    color: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.concept h4 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-}
-
-/* Temas Religiosos */
-.religious-themes {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.theme {
-    background: linear-gradient(45deg, var(--red), var(--orange));
-    color: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.theme h4 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-}
-
-/* Influencias */
-.influences-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin-top: 2rem;
-}
-
-.influences-received h3,
-.influences-given h3 {
-    color: var(--gold);
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.influence-cards {
-    display: grid;
-    gap: 1.5rem;
-}
-
-.influence-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 1.5rem;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    transition: var(--transition);
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.influence-card:hover {
-    transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.influence-icon {
-    font-size: 2rem;
-    color: var(--gold);
-    min-width: 50px;
-}
-
-.influence-card h4 {
-    color: var(--white);
-    margin-bottom: 0.5rem;
-}
-
-.influence-card p {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
-}
-
-/* Contexto Grid */
-.context-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.context-card {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-    text-align: center;
-    transition: var(--transition);
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.context-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-}
-
-.context-icon {
-    font-size: 3rem;
-    color: var(--gold);
-    margin-bottom: 1rem;
-}
-
-.context-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-/* Videos Grid */
-.videos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.video-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    transition: var(--transition);
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.video-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.video-thumbnail {
-    font-size: 4rem;
-    color: var(--red);
-    margin-bottom: 1rem;
-}
-
-.video-card h3 {
-    color: var(--white);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-}
-
-.video-card p {
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 1.5rem;
-}
-
-.video-card a {
-    background: var(--red);
-    color: var(--white);
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: var(--transition);
-    display: inline-block;
-}
-
-.video-card a:hover {
-    background: var(--orange);
-    transform: translateY(-2px);
-}
-
-/* Fuentes Grid */
-.sources-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.source-category {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.source-category h3 {
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-    text-align: center;
-}
-
-.source-list {
-    list-style: none;
-}
-
-.source-list li {
-    margin-bottom: 1rem;
-}
-
-.source-list a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    transition: var(--transition);
-}
-
-.source-list a:hover {
-    background: var(--background-color);
-    color: var(--primary-color);
-}
-
-/* Footer */
-.footer {
-    background: var(--dark-bg);
-    color: var(--white);
-    padding: 3rem 0 1rem;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.footer-section h3 {
-    color: var(--gold);
-    margin-bottom: 1rem;
-}
-
-.footer-section ul {
-    list-style: none;
-}
-
-.footer-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-section a {
-    color: var(--white);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.footer-section a:hover {
-    color: var(--gold);
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.7);
-}
-
-/* Animaciones */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background-color: var(--primary-color);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
-        padding: 2rem 0;
-    }
-
-    .nav-menu.active {
-        left: 0;
-    }
-
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .timeline::after {
-        left: 20px;
-    }
-
-    .timeline-item {
-        width: 100%;
-        padding-left: 50px;
-        padding-right: 25px;
-        text-align: left;
-    }
-
-    .timeline-item::before {
-        left: 10px;
-    }
-
-    .timeline-marker {
-        left: 10px !important;
-    }
-
-    .influences-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .works-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .tab-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .philosophy-content {
-        padding: 2rem;
-    }
-
-    .hierarchy {
-        gap: 0.5rem;
-    }
-
-    .level {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-
-    .level-name {
-        min-width: auto;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .work-card,
-    .context-card,
-    .source-category {
-        padding: 1.5rem;
-    }
-
-    .philosophy-content {
-        padding: 1.5rem;
-    }
-
-    .timeline-content {
-        padding: 15px;
-    }
-}
+        :root {
+            --pri: #2c3e50;
+            --sec: #446D90;
+            --gold: #EDBB46;
+            --light: #f9f9f9;
+            --dark: #1b2530;
+            --accent: #e74c3c;
+        }
+        html {scroll-behavior: smooth;}
+        body {
+            margin:0;
+            background:var(--light);
+            color:var(--pri);
+            font-family:'Inter',sans-serif;
+        }
+        header {
+            background: linear-gradient(120deg, var(--pri) 60%, var(--gold));
+            color:#fff;
+            padding:0 0 2.2em 0;
+            position:relative;
+            overflow:hidden;
+        }
+        .hero-top {
+            display: flex; align-items: center;justify-content:space-between;
+            max-width:1200px;margin:0 auto 0;padding:2.3em 1em 0 1em;
+            flex-wrap: wrap;
+        }
+        .hero-info {max-width:600px;}
+        h1 {
+            font-family:'Playfair Display',serif;
+            font-size:clamp(2.4em,6vw,3em);
+            margin:.2em 0 .1em 0;
+            line-height: 1.05;
+            background: linear-gradient(90deg, #fff, var(--gold) 70%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-desc {
+            font-size:1.2em;margin:1em 0 1.7em 0;font-style:italic;
+            color:rgb(255,255,255,0.88)
+        }
+        .call {
+            background: var(--gold);
+            color: #fff;
+            padding: 0.8em 2.2em;
+            font-family:'Inter',sans-serif;
+            border-radius:40px;
+            border:none;
+            font-size:1em;
+            font-weight:600;
+            box-shadow:0 3px 18px var(--pri, #2c3e50)36%;
+            letter-spacing:.01em;
+            cursor:pointer;
+            transition:.21s;
+        }
+        .call:hover {background:var(--pri);color:var(--gold);}
+        .hero-img {
+            display:flex;flex-direction:column;align-items:center;justify-content:center;margin-left:1em;
+        }
+        .hero-img .img-circle {
+            width:164px;height:164px;
+            border-radius:50%;background:linear-gradient(120deg,#517795 65%,var(--gold) 100%);
+            box-shadow: 0 4px 24px #223B5550;
+            display:flex;align-items:center;justify-content:center;
+        }
+        .img-circle i {
+            font-size: 4.5em;color: #fff;
+            opacity:0.98;
+        }
+        nav {
+            width:100%;
+            background:rgba(30,40,56,0.93);
+            position:fixed;top:0;left:0;z-index:100;
+            box-shadow:0 1px 14px #151D2550;
+            border-bottom:2px solid var(--gold);
+        }
+        .nav-content{
+            max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;
+            padding:0.4em 1.5em;
+        }
+        .nav-logo{
+            color:var(--gold);
+            font-family:'Playfair Display',serif;
+            font-weight:bold;
+            font-size:1.3em;display:flex;align-items:center;gap:.43em;
+        }
+        .nav-logo i{color:var(--gold);}
+        .nav-links{
+            display:flex;gap:1.6em;
+        }
+        .nav-links a{
+            color:#fff;
+            font-size:1em;
+            font-weight:500;
+            text-decoration:none;
+            padding:.32em 1em;
+            border-radius:18px;
+            transition:.2s;
+            position:relative;
+        }
+        .nav-links a:after{
+            content:'';display:block;
+            height:2px;width:0;
+            background:var(--gold);
+            border-radius:8px;
+            position:absolute;left:18px;bottom:7px;
+            transition:.3s;
+        }
+        .nav-links a:hover,.nav-links a.activo{
+            background:var(--gold) !important;color:var(--pri);
+        }
+        .nav-links a:hover:after{width:60%;}
+        .mob-menu{display:none;font-size:1.7em;cursor:pointer;}
+        /* Secciones */
+        section{padding: 5.6em 0 3em 0;}
+        section:nth-child(odd) {background: #fff;}
+        section:nth-child(even) {background: #f3f7fa;}
+        .sec{
+            max-width: 1100px;
+            margin:0 auto;
+            padding:0 1em;
+            position:relative;
+        }
+        h2{
+            font-family:'Playfair Display',serif;
+            color: var(--pri);font-size:2.1em;font-weight:700;
+            margin:0 0 1.1em 0;text-align:center;position:relative;
+        }
+        h2:after{
+            content:'';display:block;
+            width:4em;height:3px;background:var(--gold);
+            border-radius:3px;margin:10px auto 0 auto;
+        }
+        /* Línea de vida */
+        .timeline{margin:2.4em auto 0 auto;max-width:720px;position:relative;}
+        .timeline::before{
+            content:"";position:absolute;left:24px;top:0;width:3px;height:100%;
+            background:var(--gold, #EDBB46);border-radius:3px;
+        }
+        .t-item{
+            display:flex;align-items:flex-start;gap:1em;
+            position:relative;margin:0 0 2.8em 0;
+        }
+        .t-dot{
+            flex:none;margin-top:.28em;
+            width:1.12em;height:1.12em;
+            background:var(--gold);
+            border-radius:50%;border:2px solid #fff;
+        }
+        .t-body{
+            background:#fff;box-shadow:0 5px 14px #223b5530;
+            border-radius:8px;padding:1.1em 1.3em;
+            max-width:600px;
+            transition:.19s;
+        }
+        .t-body:hover{box-shadow:0 7px 30px #edbb4637;transform:scale(1.025);}
+        .t-body h3{margin:.12em 0 .7em 0;font-size:1.11em;color:var(--gold);font-weight:bold;}
+        /* Obras grid */
+        .grid-works{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2em;}
+        .w-card{
+            background: #fff;
+            box-shadow:0 5px 18px #223b5520;
+            border-radius:11px;
+            padding:1.35em;
+            text-align:center;transition:.17s;
+            display:flex;flex-direction:column;justify-content:space-between;
+        }
+        .w-card:hover{transform:scale(1.04);box-shadow:0 16px 44px #edbb4640;}
+        .w-card i{font-size:2.4em;color:var(--gold);margin-bottom:0.5em;}
+        .w-card h3{
+            margin:.1em 0 .7em 0;font-weight:bold;color:var(--pri);
+            font-size:1.13em;
+        }
+        .w-card .links{
+            margin-top:.7em;display:flex;justify-content:center;gap:1em;
+        }
+        .w-card .links a{
+            color:#fff;background:var(--gold);padding:.12em .88em;border-radius:15px;font-size:.94em;text-decoration:none;
+            transition:.15s;
+        }
+        .w-card .links a:hover{background:var(--pri);color:var(--gold);}
+        /* Tabs Pensamiento */
+        .tabs{
+            width:100%;max-width:920px;margin:0 auto;
+        }
+        .tab-btns{
+            display:flex;justify-content:center;gap:1em;margin-bottom:2em;flex-wrap:wrap;
+        }
+        .tab-btn{
+            padding:.6em 2.2em;background:transparent;
+            border:2px solid var(--gold);
+            color:var(--gold);
+            font-weight:600;
+            border-radius:30px;font-size:1em;cursor:pointer;
+            transition:.2s;margin: 3px 0;
+        }
+        .tab-btn.active,.tab-btn:hover{background:var(--gold);color:var(--pri);}
+        .tab-content{display:none;}
+        .tab-content.active{display:block;}
+        .tab-box{ background: #fff;
+            box-shadow:0 7px 22px #223b5530;
+            border-radius:13px;padding:2.2em 1.3em;
+        }
+        .tab-box h3 {text-align:center;color:var(--pri);margin-bottom:1.1em;}
+        /* Citas */
+        blockquote{
+            background:linear-gradient(90deg,var(--gold),#fff 100%);
+            border-left:7px solid var(--gold);
+            color:var(--pri);
+            margin:1.4em 0 1.3em 0;
+            padding: 1em 1.7em;
+            border-radius:12px;
+            font-style:italic;
+            font-size:1.09em;
+            position:relative;
+        }
+        blockquote:before{
+            content:'“';position:absolute;font-size:2.1em;left:9px;top:3px;color:var(--gold);
+        }
+        /* Jerarquía metafísica */
+        .hierarchy{display:flex;flex-direction:column;gap:.85em;margin:1.7em 0 1em 0;}
+        .hier-lvl{
+            background:linear-gradient(90deg,var(--pri),var(--gold)50%,#fff 100%);
+            color:#fff; padding:1.1em 1em;border-radius:8px;display:flex;align-items:center;gap:1em;
+            font-weight:500;
+        }
+        .hier-tag{background:rgba(255,255,255,0.27);padding:.4em 1.2em;border-radius:6px;min-width:110px;font-weight:700;}
+        /* Grids (virtudes, lógica, religión) */
+        .virtudes,.logic-conc,.themes{display:grid;grid-template-columns:repeat(auto-fit,minmax(172px,1fr));gap:.86em;margin:1.3em 0;}
+        .virt-card,.log-card,.theme-card {
+            background:linear-gradient(120deg,var(--gold),#fff 80%);
+            border-radius:8px;padding:1em 1em .5em 1em; font-weight:500;
+            color:var(--pri);box-shadow:0 3px 14px #2c3e5020;
+            min-height:90px; transition:.11s;
+        }
+        .virt-card:hover,.log-card:hover,.theme-card:hover{box-shadow:0 12px 25px #edbb463b;}
+        .virt-card h4,.log-card h4,.theme-card h4{color:var(--gold);margin-bottom:7px;font-weight:bold;font-size:1.08em;}
+        /* Influencias */
+        .infl-sec{display:flex;flex-wrap:wrap;gap:2.5em;margin-top:2em;}
+        .infl-half{flex:1 1 300px;}
+        .infl-half h3{color:var(--gold);margin-bottom:1em;text-align:center;font-size:1.3em;}
+        .infl-list{
+            display:grid;grid-template-columns:1fr;gap:1em;
+        }
+        .infl-card{
+            display:flex;align-items:center;gap:.9em;
+            background:rgba(255,255,255,0.98);
+            border-radius:7px;padding:.75em 1em;
+            box-shadow:0 1px 7px #2c3e5020;
+            font-size:.98em;transition:.12s;
+        }
+        .infl-card i{font-size:1.4em;color:var(--gold);}
+        /* Contexto grid */
+        .context-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(239px,1fr));gap:1.5em;}
+        .cont-card {
+            background:#fff;box-shadow:0 1px 8px #223b5520;
+            border-radius:11px;padding:1.2em 1.1em;
+            text-align:center;
+        }
+        .cont-card i{font-size:2em;color:var(--gold);}
+        .cont-card h3{color:var(--pri);font-weight:bold;margin:.6em 0 1em 0;font-size:1.1em;}
+        /* Videos */
+        .vid-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.4em;}
+        .vid-card{
+            background:#fff;box-shadow:0 1px 10px #223b5520;border-radius:10px;
+            padding:.7em 1em 1em 1em;text-align:center;transition:.13s;
+            display:flex;flex-direction:column;
+        }
+        .vid-card:hover{box-shadow:0 7px 30px #edbb4640;transform:scale(1.037);}
+        .vid-thumb{font-size:2.5em;color:var(--accent, #e74c3c);}
+        .vid-card a{margin-top:.8em;background:var(--gold);color:#fff;border-radius:15px;padding:7px 19px;text-decoration:none;transition:.14s;}
+        .vid-card a:hover{background:var(--pri);color:var(--gold);}
+        /* Fuentes/referencias */
+        .sources-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2em;}
+        .source-cat{
+            background:#fff;border-radius:9px;padding:1.2em 1em;box-shadow:0 1px 10px #2c3e5020;
+        }
+        .source-cat h3{color:var(--pri);margin-bottom:1em;text-align:center;font-size:1em;}
+        .src-list{list-style:none; margin:0;padding:0;}
+        .src-list li{margin-bottom:.83em;}
+        .src-list li a{color:var(--sec);text-decoration:none;display:flex;align-items:center;gap:9px;}
+        .src-list li a:hover{color:var(--gold);}
+        .fab.fa-youtube,.fab.fa-spotify {color:var(--accent);}
+        /* Footer */
+        footer{background:var(--pri);color:#fff;padding:2.2em 0 .8em 0;}
+        .foot-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:2.4em;padding:0 1em;}
+        .foot-sec h3{color:var(--gold);margin-bottom:.5em;font-size:1.13em;}
+        .foot-sec ul{list-style:none;padding: 0;}
+        .foot-sec ul li{margin-bottom:0.4em;}
+        .foot-sec ul li a{color:#fff;text-decoration:none;transition:.1s;}
+        .foot-sec ul li a:hover{color:var(--gold);}
+        .foot-btm{text-align:center;margin-top:2.1em;color:#ddd;font-size:.94em;}
+        /* Floating Quote */
+        .float-quote{
+            position:fixed;top:20px;right:24px;z-index:5000;
+            background:linear-gradient(120deg,var(--gold),var(--pri) 90%);
+            color:#fff;border-radius:11px;box-shadow:0 3px 20px #2c3e50b5;
+            padding:1em 1.5em;max-width:320px;font-size:1.04em;animation: floatIn .7s;
+        }
+        .float-quote blockquote{background:transparent;border:none;color:#fff;padding:0;margin:0;}
+        .float-quote button{position:absolute;top:9px;right:15px;background:transparent;border:none;color:#fff;font-size:1.1em;cursor:pointer;}
+        @keyframes floatIn{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+        /* Hero flecha */
+        .scroll-down{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);font-size:2em;color:#fff;opacity:.5;animation:bouncedown 1.8s infinite}
+        @keyframes bouncedown{0%,100%{transform:translateY(0) scale(1);}20%{transform:translateY(11px) scale(1.05);}45%{transform:translateY(-8px) scale(.97);}}
+        /* RESPONSIVE */
+        @media (max-width:920px){.hero-top{flex-direction:column;text-align:center;gap:1.3em;}.hero-img{margin:0;padding-top:1.7em;}}
+        @media (max-width:780px){
+            nav{position:static;}.nav-links{display:none;position:absolute;top:57px;right:0;flex-direction:column;width:100%;background: #243041ed;z-index:99;}
+            .nav-links.show{display:flex;}
+            .mob-menu{display:block;}
+            header{padding-bottom:0;}
+            .tab-box{padding:1.5em .7em;}
+            .infl-sec{flex-direction:column;gap:1.1em;}
+        }
+        @media (max-width:600px){
+            section{padding:3em 0 1.6em 0;}
+            .sec{padding:0 .5em}
+            .hero-img .img-circle{width:110px;height:110px}
+            .hero-img i{font-size:2.3em;}
+        }
     </style>
 </head>
 <body>
-    <!-- Navegación -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-scroll"></i>
-                <span>Porfirio de Tiro</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#biografia">Biografía</a></li>
-                <li><a href="#obras">Obras</a></li>
-                <li><a href="#pensamiento">Pensamiento</a></li>
-                <li><a href="#influencias">Influencias</a></li>
-                <li><a href="#contexto">Contexto</a></li>
-                <li><a href="#videos">Videos</a></li>
-                <li><a href="#fuentes">Fuentes</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+    <nav>
+        <div class="nav-content">
+            <div class="nav-logo"><i class="fas fa-scroll"></i>Porfirio de Tiro</div>
+            <div class="mob-menu" id="mobmenu"><i class="fas fa-bars"></i></div>
+            <div class="nav-links" id="menulist">
+                <a href="#bio">Biografía</a>
+                <a href="#obras">Obras</a>
+                <a href="#pensamiento">Pensamiento</a>
+                <a href="#infl">Influencias</a>
+                <a href="#ctx">Contexto</a>
+                <a href="#videos">Videos</a>
+                <a href="#fuentes">Fuentes</a>
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">Porfirio de Tiro</h1>
-                <p class="hero-subtitle">Filósofo Neoplatónico (c. 234-305 d.C.)</p>
-                <p class="hero-description">
-                    "El alma que se ha liberado de las pasiones y se ha purificado mediante la filosofía 
-                    puede ascender hacia la contemplación de lo divino."
-                </p>
-                <button class="cta-button" onclick="scrollToSection('biografia')">
-                    Explorar su Filosofía
-                </button>
+    <header>
+        <div class="hero-top">
+            <div class="hero-info">
+                <h1>Porfirio de Tiro</h1>
+                <div style="font-size:1.07em;opacity:.96">Filósofo neoplatónico (c. 234–305 d.C.)</div>
+                <div class="hero-desc">
+                    «El alma que se ha liberado de las pasiones y se ha purificado mediante la filosofía puede ascender hacia la contemplación de lo divino.»
+                </div>
+                <button class="call" onclick="scrollToDiv('bio')">Explorar su Filosofía</button>
             </div>
-            <div class="hero-image">
-                <div class="philosophical-symbol">
+            <div class="hero-img">
+                <div class="img-circle">
                     <i class="fas fa-infinity"></i>
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
+        <a href="#bio" class="scroll-down"><i class="fas fa-chevron-down"></i></a>
+    </header>
 
-    <!-- Biografía -->
-    <section id="biografia" class="section">
-        <div class="container">
-            <h2 class="section-title">Biografía</h2>
+    <section id="bio">
+        <div class="sec">
+            <h2>Biografía</h2>
             <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>c. 234 d.C. - Nacimiento</h3>
-                        <p>Nace en Tiro, Fenicia (actual Líbano), en una familia griega. Su nombre original era Malco, que significa "rey" en semítico.</p>
+                <div class="t-item">
+                    <div class="t-dot"></div>
+                    <div class="t-body">
+                        <h3>c. 234 d.C. – Nacimiento en Tiro</h3>
+                        Nació en Tiro (hoy Líbano) como Malco, en el seno de una familia griega culta. Adoptó el nombre Porphyrios ("púrpura", color imperial) en Atenas.
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>c. 263 d.C. - Encuentro con Plotino</h3>
-                        <p>Se traslada a Roma donde se convierte en discípulo de Plotino, el fundador del neoplatonismo. Permanece con él durante seis años.</p>
+                <div class="t-item">
+                    <div class="t-dot"></div>
+                    <div class="t-body">
+                        <h3>Juventud y formación (Atenas y Alejandría)</h3>
+                        Estudia con Longino. Profundo conocedor de la filosofía griega clásica y de las religiones orientales.
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>c. 268 d.C. - Crisis Espiritual</h3>
-                        <p>Experimenta una profunda crisis que lo lleva a considerar el suicidio. Plotino lo envía a Sicilia para su recuperación.</p>
+                <div class="t-item">
+                    <div class="t-dot"></div>
+                    <div class="t-body">
+                        <h3>c. 263 d.C. – Roma, discípulo de Plotino</h3>
+                        En Roma se convierte en el más brillante discípulo de Plotino, fundador del neoplatonismo; juntos durante seis años.
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>c. 301 d.C. - Edición de las Enéadas</h3>
-                        <p>Edita y publica las obras de Plotino bajo el título "Enéadas", preservando así el pensamiento neoplatónico.</p>
+                <div class="t-item">
+                    <div class="t-dot"></div>
+                    <div class="t-body">
+                        <h3>268 d.C. – Crisis y Sicilia</h3>
+                        Atravesó una crisis espiritual profunda, a punto de suicidarse. Plotino lo envió a Sicilia a recuperarse y continuar sus escritos.
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>c. 305 d.C. - Muerte</h3>
-                        <p>Muere en Roma, dejando una vasta obra filosófica que influirá en el pensamiento occidental durante siglos.</p>
+                <div class="t-item">
+                    <div class="t-dot"></div>
+                    <div class="t-body">
+                        <h3>301 d.C. – Edición de las Enéadas</h3>
+                        Edita y publica los escritos de Plotino como "Enéadas". Lega al mundo la sistematización del neoplatonismo.
+                    </div>
+                </div>
+                <div class="t-item">
+                    <div class="t-dot"></div>
+                    <div class="t-body">
+                        <h3>c. 305 d.C. – Fallecimiento en Roma</h3>
+                        Deja una obra propia extensa y comentarios a clásicos, influyendo en siglos posteriores.
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Obras Principales -->
-    <section id="obras" class="section dark">
-        <div class="container">
-            <h2 class="section-title">Obras Principales</h2>
-            <div class="works-grid">
-                <div class="work-card">
-                    <div class="work-icon">
-                        <i class="fas fa-tree"></i>
-                    </div>
+    <section id="obras">
+        <div class="sec">
+            <h2>Obras Principales</h2>
+            <div class="grid-works">
+                <div class="w-card">
+                    <i class="fas fa-tree"></i>
                     <h3>Isagoge</h3>
-                    <p>Introducción a las Categorías de Aristóteles que se convirtió en texto básico de lógica medieval.</p>
-                    <div class="work-links">
-                        <a href="https://archive.org/details/porphyriusisagog00porp" target="_blank">
-                            <i class="fas fa-book"></i> Archive.org
-                        </a>
-                        <a href="https://www.cervantesvirtual.com/obra/isagoge-introduccion-a-las-categorias-de-aristoteles/" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Cervantes Virtual
-                        </a>
+                    <div>Breve e influyente introducción a las Categorías de Aristóteles. Base de la lógica medieval.</div>
+                    <div class="links">
+                        <a href="https://www.cervantesvirtual.com/obra/isagoge-introduccion-a-las-categorias-de-aristoteles/" target="_blank"><i class="fas fa-book"></i> Español</a>
+                        <a href="https://archive.org/details/porphyriusisagog00porp" target="_blank"><i class="fas fa-book"></i> Archivo</a>
                     </div>
                 </div>
-                <div class="work-card">
-                    <div class="work-icon">
-                        <i class="fas fa-user-minus"></i>
-                    </div>
+                <div class="w-card">
+                    <i class="fas fa-user-minus"></i>
                     <h3>Contra los Cristianos</h3>
-                    <p>Crítica sistemática al cristianismo en 15 libros, obra perdida pero conocida por refutaciones.</p>
-                    <div class="work-links">
-                        <a href="https://archive.org/details/porphyryagainstc00porp" target="_blank">
-                            <i class="fas fa-book"></i> Fragmentos
-                        </a>
+                    <div>La más célebre refutación pagana de la nueva religión (perdida, quedan fragmentos y refutaciones de Padres cristianos).</div>
+                    <div class="links">
+                        <a href="https://archive.org/details/porphyryagainstc00porp" target="_blank"><i class="fas fa-book"></i> Fragmentos EN</a>
+                        <a href="https://web.archive.org/web/20161006194944/https://www.lupaproject.com/porphyry_abstract.html" target="_blank"><i class="fas fa-info"></i> Sobre la obra</a>
                     </div>
                 </div>
-                <div class="work-card">
-                    <div class="work-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3>Sobre la Abstinencia</h3>
-                    <p>Tratado sobre vegetarianismo y purificación espiritual a través de la dieta.</p>
-                    <div class="work-links">
-                        <a href="https://archive.org/details/porphyryonabstin00porp" target="_blank">
-                            <i class="fas fa-book"></i> Archive.org
-                        </a>
+                <div class="w-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Sobre la abstinencia</h3>
+                    <div>Defensa filosófica del vegetarianismo y la pureza moral como camino ascético.</div>
+                    <div class="links">
+                        <a href="https://archive.org/details/porphyryonabstin00porp" target="_blank"><i class="fas fa-book"></i> EN Archive</a>
                     </div>
                 </div>
-                <div class="work-card">
-                    <div class="work-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
+                <div class="w-card">
+                    <i class="fas fa-eye"></i>
                     <h3>Vida de Plotino</h3>
-                    <p>Biografía de su maestro Plotino y prefacio a las Enéadas.</p>
-                    <div class="work-links">
-                        <a href="https://archive.org/details/plotinusennead01plot" target="_blank">
-                            <i class="fas fa-book"></i> Archive.org
-                        </a>
+                    <div>Introducción biográfica a las Enéadas. Fuente para conocer la vida y pensamiento de Plotino.</div>
+                    <div class="links">
+                        <a href="https://archive.org/details/plotinusennead01plot" target="_blank"><i class="fas fa-book"></i> Archive</a>
                     </div>
                 </div>
-                <div class="work-card">
-                    <div class="work-icon">
-                        <i class="fas fa-cave"></i>
-                    </div>
+                <div class="w-card">
+                    <i class="fas fa-cave"></i>
                     <h3>El Antro de las Ninfas</h3>
-                    <p>Interpretación alegórica del episodio homérico sobre el antro de las ninfas en Ítaca.</p>
-                    <div class="work-links">
-                        <a href="https://archive.org/details/porphyryonthecav00porp" target="_blank">
-                            <i class="fas fa-book"></i> Archive.org
-                        </a>
+                    <div>Interpretación alegórica del mito homérico del antro como símbolo del alma y el cosmos.</div>
+                    <div class="links">
+                        <a href="https://archive.org/details/porphyryonthecav00porp" target="_blank"><i class="fas fa-book"></i> EN Archive</a>
                     </div>
                 </div>
-                <div class="work-card">
-                    <div class="work-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
+                <div class="w-card">
+                    <i class="fas fa-star"></i>
                     <h3>Carta a Marcela</h3>
-                    <p>Tratado ético dirigido a su esposa sobre la vida filosófica y la virtud.</p>
-                    <div class="work-links">
-                        <a href="https://archive.org/details/porphyryletterma00porp" target="_blank">
-                            <i class="fas fa-book"></i> Archive.org
-                        </a>
+                    <div>Consejos éticos y espirituales a su esposa sobre la vida filosófica y la virtud.</div>
+                    <div class="links">
+                        <a href="https://archive.org/details/porphyryletterma00porp" target="_blank"><i class="fas fa-book"></i> EN Archive</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pensamiento Filosófico -->
-    <section id="pensamiento" class="section">
-        <div class="container">
-            <h2 class="section-title">Pensamiento Filosófico</h2>
-            <div class="philosophy-tabs">
-                <div class="tab-buttons">
-                    <button class="tab-button active" onclick="showTab('metafisica')">Metafísica</button>
-                    <button class="tab-button" onclick="showTab('etica')">Ética</button>
-                    <button class="tab-button" onclick="showTab('logica')">Lógica</button>
-                    <button class="tab-button" onclick="showTab('religion')">Religión</button>
+    <section id="pensamiento">
+        <div class="sec">
+            <h2>Pensamiento Filosófico</h2>
+            <div class="tabs">
+                <div class="tab-btns">
+                    <button class="tab-btn active" data-tab="metaf">Metafísica</button>
+                    <button class="tab-btn" data-tab="etica">Ética</button>
+                    <button class="tab-btn" data-tab="logica">Lógica</button>
+                    <button class="tab-btn" data-tab="religion">Religión</button>
                 </div>
-                <div class="tab-content">
-                    <div id="metafisica" class="tab-panel active">
-                        <div class="philosophy-content">
-                            <h3>Metafísica Neoplatónica</h3>
-                            <p>Porfirio desarrolló la metafísica de Plotino, estableciendo una jerarquía ontológica que va desde el Uno hasta la materia:</p>
-                            <div class="hierarchy">
-                                <div class="level">
-                                    <div class="level-name">El Uno</div>
-                                    <div class="level-description">Principio absoluto, más allá del ser y del pensamiento</div>
-                                </div>
-                                <div class="level">
-                                    <div class="level-name">El Intelecto</div>
-                                    <div class="level-description">Emanación del Uno que contiene las Ideas platónicas</div>
-                                </div>
-                                <div class="level">
-                                    <div class="level-name">El Alma</div>
-                                    <div class="level-description">Principio animador que conecta lo inteligible con lo sensible</div>
-                                </div>
-                                <div class="level">
-                                    <div class="level-name">La Materia</div>
-                                    <div class="level-description">Principio pasivo y receptivo, límite de la emanación</div>
-                                </div>
-                            </div>
-                            <blockquote>
-                                "El Uno es la fuente de toda realidad, pero él mismo está más allá de toda determinación. 
-                                Es el principio que, sin moverse, produce todas las cosas por emanación necesaria."
-                            </blockquote>
+                <div class="tab-content active" id="metaf">
+                    <div class="tab-box">
+                        <h3>Metafísica Neoplatónica</h3>
+                        <div>Continúa la metafísica de Plotino, estableciendo <b>el Uno</b> como principio de toda realidad, seguido de la Inteligencia (Nous), el Alma y el Mundo.</div>
+                        <div class="hierarchy" style="margin-top:1.5em;">
+                            <div class="hier-lvl"><span class="hier-tag">El Uno</span> Principio supremo, absolutamente simple, fuente de todo lo existente.</div>
+                            <div class="hier-lvl"><span class="hier-tag">Intelecto</span> Emanación del Uno, donde “moran” las Ideas.</div>
+                            <div class="hier-lvl"><span class="hier-tag">Alma</span> Nexo entre lo inteligible y el cosmos. El alma humana es capaz de ascenso.</div>
+                            <div class="hier-lvl"><span class="hier-tag">Materia</span> Nivel más bajo, receptivo, sujeta al devenir.</div>
                         </div>
+                        <blockquote>
+                            El Uno es la fuente de toda realidad, pero él mismo está más allá de toda determinación. Es el principio que, sin moverse, produce todas las cosas por emanación necesaria.<br/>
+                            <span style="font-size:.98em;">— <em>Enéadas, ed. Porfirio</em></span>
+                        </blockquote>
                     </div>
-                    <div id="etica" class="tab-panel">
-                        <div class="philosophy-content">
-                            <h3>Ética y Purificación</h3>
-                            <p>La ética porfiriana se centra en la purificación del alma para su ascenso hacia lo divino:</p>
-                            <div class="virtues-grid">
-                                <div class="virtue-card">
-                                    <h4>Virtudes Cívicas</h4>
-                                    <p>Justicia, templanza, fortaleza y prudencia en la vida social</p>
-                                </div>
-                                <div class="virtue-card">
-                                    <h4>Virtudes Purificativas</h4>
-                                    <p>Liberación de las pasiones y apegos mundanos</p>
-                                </div>
-                                <div class="virtue-card">
-                                    <h4>Virtudes Contemplativas</h4>
-                                    <p>Ejercicio del intelecto en la contemplación de las Ideas</p>
-                                </div>
-                                <div class="virtue-card">
-                                    <h4>Virtudes Paradigmáticas</h4>
-                                    <p>Identificación con los arquetipos divinos</p>
-                                </div>
-                            </div>
-                            <blockquote>
-                                "La filosofía es una purificación y una liberación del alma. El filósofo debe apartarse 
-                                de lo sensible y dirigirse hacia lo inteligible mediante la práctica de las virtudes."
-                            </blockquote>
+                </div>
+                <div class="tab-content" id="etica">
+                    <div class="tab-box">
+                        <h3>Ética y Purificación</h3>
+                        <div>La vida filosófica para Porfirio es <b>purificación del alma</b>. Propone una escala de virtudes llevándonos de lo social a la unión con lo divino:</div>
+                        <div class="virtudes">
+                            <div class="virt-card"><h4>Cívicas</h4>Justicia, templanza, fortaleza y prudencia aplicadas en la ciudad y la vida social.</div>
+                            <div class="virt-card"><h4>Purificativas</h4>Liberación de apegos, apetitos y pasiones mediante ejercicios y dieta.</div>
+                            <div class="virt-card"><h4>Contemplativas</h4>Perfección intelectual en el acceso a las realidades superiores.</div>
+                            <div class="virt-card"><h4>Paradigmáticas</h4>Imitación de lo divino, identificación con los modelos eternos.</div>
                         </div>
+                        <blockquote>
+                            La filosofía es una purificación y una liberación del alma. El filósofo debe apartarse de lo sensible y dirigirse hacia lo inteligible mediante la práctica de las virtudes.
+                        </blockquote>
                     </div>
-                    <div id="logica" class="tab-panel">
-                        <div class="philosophy-content">
-                            <h3>Lógica y Dialéctica</h3>
-                            <p>Porfirio sistematizó la lógica aristotélica, especialmente en su obra "Isagoge":</p>
-                            <div class="logic-concepts">
-                                <div class="concept">
-                                    <h4>Árbol de Porfirio</h4>
-                                    <p>Esquema jerárquico de géneros y especies que influyó en la lógica medieval</p>
-                                </div>
-                                <div class="concept">
-                                    <h4>Cinco Predicables</h4>
-                                    <p>Género, especie, diferencia, propio y accidente como modos de predicación</p>
-                                </div>
-                                <div class="concept">
-                                    <h4>Problema de los Universales</h4>
-                                    <p>Planteamiento sobre la naturaleza de los conceptos universales</p>
-                                </div>
-                            </div>
-                            <blockquote>
-                                "Sobre los géneros y las especies, si subsisten o solo se encuentran en los 
-                                pensamientos puros, y si subsistiendo son corporales o incorporales, 
-                                y si están separados o en las cosas sensibles: me abstendré de hablar."
-                            </blockquote>
+                </div>
+                <div class="tab-content" id="logica">
+                    <div class="tab-box">
+                        <h3>Lógica y Dialéctica</h3>
+                        <div><b>Isagoge</b> sistematiza la lógica de Aristóteles y tuvo enorme impacto en Occidente medieval:</div>
+                        <div class="logic-conc">
+                            <div class="log-card"><h4>Árbol de Porfirio</h4>Estructura jerárquica de géneros, especies y diferencias; base de la clasificación lógica.</div>
+                            <div class="log-card"><h4>Cinco predicables</h4>Género, especie, diferencia, propio y accidente: modos de predicación.</div>
+                            <div class="log-card"><h4>Problema de los universales</h4>¿Existen los universales fuera de la mente? Porfirio: "me abstendré de opinar".</div>
                         </div>
+                        <blockquote>
+                            Sobre los géneros y las especies, si subsisten o solo se encuentran en los pensamientos puros [...] me abstendré de hablar.<br>
+                            <em>— Isagoge, Porfirio</em>
+                        </blockquote>
                     </div>
-                    <div id="religion" class="tab-panel">
-                        <div class="philosophy-content">
-                            <h3>Filosofía Religiosa</h3>
-                            <p>Porfirio desarrolló una filosofía religiosa que armonizaba el paganismo con el platonismo:</p>
-                            <div class="religious-themes">
-                                <div class="theme">
-                                    <h4>Teúrgia</h4>
-                                    <p>Práctica ritual para la unión con lo divino</p>
-                                </div>
-                                <div class="theme">
-                                    <h4>Crítica al Cristianismo</h4>
-                                    <p>Análisis racional de las escrituras cristianas</p>
-                                </div>
-                                <div class="theme">
-                                    <h4>Vegetarianismo</h4>
-                                    <p>Abstinencia de carne por purificación espiritual</p>
-                                </div>
-                                <div class="theme">
-                                    <h4>Interpretación Alegórica</h4>
-                                    <p>Lectura simbólica de los mitos y textos sagrados</p>
-                                </div>
-                            </div>
-                            <blockquote>
-                                "Los dioses no necesitan sacrificios cruentos. Lo que verdaderamente les agrada 
-                                es la pureza del alma y el ejercicio de la virtud."
-                            </blockquote>
+                </div>
+                <div class="tab-content" id="religion">
+                    <div class="tab-box">
+                        <h3>Filosofía religiosa y crítica</h3>
+                        <div>Porfirio armoniza la religión tradicional con la metafísica platónica:</div>
+                        <div class="themes">
+                            <div class="theme-card"><h4>Teúrgia</h4>Prácticas rituales de unión con lo divino, siguiendo la sabiduría caldea.</div>
+                            <div class="theme-card"><h4>Crítica al cristianismo</h4>Análisis filosófico de los textos cristianos, defensa del paganismo clásico.</div>
+                            <div class="theme-card"><h4>Vegetarianismo</h4>La abstinencia de carne como purificación ascética y vínculo con el Pitagorismo.</div>
+                            <div class="theme-card"><h4>Interpretación alegórica</h4>Lectura simbólica de mitos y textos sagrados, especialmente de Homero.</div>
                         </div>
+                        <blockquote>
+                            Los dioses no necesitan sacrificios cruentos. Lo que verdaderamente les agrada es la pureza del alma y el ejercicio de la virtud.
+                        </blockquote>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Influencias -->
-    <section id="influencias" class="section dark">
-        <div class="container">
-            <h2 class="section-title">Influencias Filosóficas</h2>
-            <div class="influences-container">
-                <div class="influences-received">
-                    <h3>Influencias Recibidas</h3>
-                    <div class="influence-cards">
-                        <div class="influence-card">
-                            <div class="influence-icon">
-                                <i class="fas fa-columns"></i>
-                            </div>
-                            <h4>Platón</h4>
-                            <p>Teoría de las Ideas, dialéctica ascendente y dualismo ontológico</p>
-                        </div>
-                        <div class="influence-card">
-                            <div class="influence-icon">
-                                <i class="fas fa-book-open"></i>
-                            </div>
-                            <h4>Aristóteles</h4>
-                            <p>Lógica, categorías y metodología científica</p>
-                        </div>
-                        <div class="influence-card">
-                            <div class="influence-icon">
-                                <i class="fas fa-sun"></i>
-                            </div>
-                            <h4>Plotino</h4>
-                            <p>Metafísica emanacionista y mística del Uno</p>
-                        </div>
-                        <div class="influence-card">
-                            <div class="influence-icon">
-                                <i class="fas fa-leaf"></i>
-                            </div>
-                            <h4>Pitagóricos</h4>
-                            <p>Purificación del alma y armonía cósmica</p>
-                        </div>
-                        <div class="influence-card">
-                            <div class="influence-icon">
-                                <i class="fas fa-fire"></i>
-                            </div>
-                            <h4>Estoicos</h4>
-                            <p>Ética de las virtudes y filosofía práctica</p>
-                        </div>
-                        <div class="influence-card">
-                            <div class="influence-icon">
-                                <i class="fas fa-star-and-crescent"></i>
-                            </div>
-                            <h4>Tradición Oriental</h4>
-                            <p>Prácticas teúrgicas y sabiduría caldea</p>
-                        </div>
+    <section id="infl">
+        <div class="sec">
+            <h2>Influencias Filosóficas</h2>
+            <div class="infl-sec">
+                <div class="infl-half">
+                    <h3>Influencias recibidas</h3>
+                    <div class="infl-list">
+                        <div class="infl-card"><i class="fas fa-columns"></i><b>Platón</b> – Teoría de las Ideas, ascenso del alma, dialéctica.</div>
+                        <div class="infl-card"><i class="fas fa-book-open"></i><b>Aristóteles</b> – Lógica, categorías y método científico.</div>
+                        <div class="infl-card"><i class="fas fa-sun"></i><b>Plotino</b> – Metafísica emanacionista y mística del Uno.</div>
+                        <div class="infl-card"><i class="fas fa-leaf"></i><b>Pitagóricos</b> – Purificación y vida según la armonía cósmica.</div>
+                        <div class="infl-card"><i class="fas fa-fire"></i><b>Estoicos</b> – Virtudes y filosofía práctica.</div>
+                        <div class="infl-card"><i class="fas fa-star-and-crescent"></i><b>Sabiduría oriental</b> – Teurgia, prácticas rituálicas caldeas.</div>
                     </div>
                 </div>
-                <div class="influences-given">
-                    <h3>Influencias Ejercidas</h3>
-                    <div class="influence-cards">
-                        <div class="influence-card">
-                            <div class="influence-icon">
-                                <i class="fas fa-cross"></i>
-                            </div>
-                            <h4>Cristianismo</h4>
-                            <p>Teología negativa y jerarquías angelicales (Pseudo-Dionisio)</p>
-                        </div>
-                        <div class="influence-card">
-                            <div class="influence-icon">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h4>Islam</h4>
-                            <p>Filosofía islámica medieval (Al-Farabi, Avicena)</p>
-                        </div>
-                        <div class="influence-card">
-                            <div class="influence-icon">
-                                <i class="fas fa-university"></i>
-                            </div>
-                            <h4>Escolástica</h4>
-                            <p>Lógica medieval y problema de los universales</p>
-                        </div>
-                        <div class="influence-card">
-                            <div class="influence-icon">
-                                <i class="fas fa-palette"></i>
-                            </div>
-                            <h4>Renacimiento</h4>
-                            <p>Neoplatonismo renacentista (Ficino, Pico della Mirandola)</p>
-                        </div>
-                        <div class="influence-card">
-                            <div class="influence-icon">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <h4>Filosofía Moderna</h4>
-                            <p>Idealismo alemán y filosofía de la religión</p>
-                        </div>
-                        <div class="influence-card">
-                            <div class="influence-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <h4>Filosofía Contemporánea</h4>
-                            <p>Estudios sobre neoplatonismo y filosofía antigua</p>
-                        </div>
+                <div class="infl-half">
+                    <h3>Influencias ejercidas</h3>
+                    <div class="infl-list">
+                        <div class="infl-card"><i class="fas fa-cross"></i><b>Cristianismo patrístico</b> – Teología negativa, jerarquías espirituales (Pseudo Dionisio).</div>
+                        <div class="infl-card"><i class="fas fa-star"></i><b>Islam</b> – Filosofía medieval (Al-Kindi, Avicena, Al-Farabi).</div>
+                        <div class="infl-card"><i class="fas fa-university"></i><b>Escolástica</b> – Lógica y debate sobre los universales.</div>
+                        <div class="infl-card"><i class="fas fa-palette"></i><b>Neoplatonismo renacentista</b> – Ficino, Pico della Mirandola.</div>
+                        <div class="infl-card"><i class="fas fa-brain"></i><b>Filosofía contemporánea</b> – Historia de la filosofía, estudios sobre lógica y metafísica antiguas.</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contexto Histórico -->
-    <section id="contexto" class="section">
-        <div class="container">
-            <h2 class="section-title">Contexto Histórico y Filosófico</h2>
+    <section id="ctx">
+        <div class="sec">
+            <h2>Contexto histórico y filosófico</h2>
             <div class="context-grid">
-                <div class="context-card">
-                    <div class="context-icon">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h3>Imperio Romano Tardío</h3>
-                    <p>Período de crisis política y transformación cultural. Los emperadores-filósofos 
-                    como Marco Aurelio dan paso a una época de inestabilidad que busca nuevas 
-                    formas de espiritualidad.</p>
+                <div class="cont-card"><i class="fas fa-crown"></i><h3>Imperio Romano tardío</h3>Época de crisis y transformación espiritual: auge de cultos y religiones filosóficas.</div>
+                <div class="cont-card"><i class="fas fa-praying-hands"></i><h3>Expansión del cristianismo</h3>El cristianismo crece, provocando polémicas y respuestas desde el paganismo filosófico.</div>
+                <div class="cont-card"><i class="fas fa-school"></i><h3>Escuelas filosóficas</h3>Neoplatónicos, estoicos, aristotélicos y síntesis eclécticas disputan la verdad última.</div>
+                <div class="cont-card"><i class="fas fa-globe"></i><h3>Sincretismo</h3>Fusión de tradiciones griegas, romanas y orientales, mezclando ritual, filosofía y mística.</div>
+                <div class="cont-card"><i class="fas fa-scroll"></i><h3>Preservación del saber</h3>Comentario y transmisión de Platón y Aristóteles, que serán la base del pensamiento medieval.</div>
+                <div class="cont-card"><i class="fas fa-magic"></i><h3>Renacimiento de la teúrgia</h3>Revalorización de la religión filosófica y los ritos como vía de conocimiento.</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="videos">
+        <div class="sec">
+            <h2>Videos sobre Porfirio</h2>
+            <div class="vid-grid">
+                <div class="vid-card">
+                    <div class="vid-thumb"><i class="fab fa-youtube"></i></div>
+                    <div><b>Porfirio y el neoplatonismo</b><br><span style="font-size:.98em;color:var(--pri);">¿Quién fue Porfirio y cuál es su legado?</span></div>
+                    <a href="https://www.youtube.com/results?search_query=porfirio+neoplatonismo+filosofia" target="_blank">Ver en YouTube</a>
                 </div>
-                <div class="context-card">
-                    <div class="context-icon">
-                        <i class="fas fa-praying-hands"></i>
-                    </div>
-                    <h3>Expansión del Cristianismo</h3>
-                    <p>El cristianismo se extiende por el Imperio Romano, generando debates 
-                    teológicos y filosóficos. Porfirio se convierte en uno de sus principales 
-                    críticos intelectuales.</p>
+                <div class="vid-card">
+                    <div class="vid-thumb"><i class="fab fa-youtube"></i></div>
+                    <div><b>La Isagoge de Porfirio</b><br><span style="font-size:.98em;color:var(--pri);">Explicación de la obra lógica más influyente de la Antigüedad.</span></div>
+                    <a href="https://www.youtube.com/results?search_query=isagoge+porfirio+logica" target="_blank">Ver en YouTube</a>
                 </div>
-                <div class="context-card">
-                    <div class="context-icon">
-                        <i class="fas fa-school"></i>
-                    </div>
-                    <h3>Escuelas Filosóficas</h3>
-                    <p>Coexisten múltiples corrientes: neoplatonismo, estoicismo tardío, 
-                    aristotelismo, y nuevas síntesis filosófico-religiosas que buscan 
-                    la sabiduría última.</p>
+                <div class="vid-card">
+                    <div class="vid-thumb"><i class="fab fa-youtube"></i></div>
+                    <div><b>Porfirio contra el cristianismo</b><br><span style="font-size:.98em;color:var(--pri);">Análisis de la obra perdida y polémica.</span></div>
+                    <a href="https://www.youtube.com/results?search_query=porfirio+contra+cristianismo" target="_blank">Ver en YouTube</a>
                 </div>
-                <div class="context-card">
-                    <div class="context-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3>Sincretismo Cultural</h3>
-                    <p>Fusión de tradiciones griegas, romanas y orientales. La filosofía 
-                    se mezcla con prácticas religiosas, creando nuevas formas de 
-                    espiritualidad intelectual.</p>
-                </div>
-                <div class="context-card">
-                    <div class="context-icon">
-                        <i class="fas fa-scroll"></i>
-                    </div>
-                    <h3>Preservación del Saber</h3>
-                    <p>Los filósofos neoplatónicos como Porfirio se dedican a preservar y 
-                    comentar la tradición filosófica griega, transmitiendo el conocimiento 
-                    a las generaciones futuras.</p>
-                </div>
-                <div class="context-card">
-                    <div class="context-icon">
-                        <i class="fas fa-magic"></i>
-                    </div>
-                    <h3>Renacimiento de la Teúrgia</h3>
-                    <p>Resurgimiento del interés por prácticas rituales y místicas como 
-                    medios de conocimiento y unión con lo divino, influenciando el 
-                    desarrollo del neoplatonismo.</p>
+                <div class="vid-card">
+                    <div class="vid-thumb"><i class="fab fa-youtube"></i></div>
+                    <div><b>El mundo antiguo y la filosofía final</b><br><span style="font-size:.98em;color:var(--pri);">Contexto cultural-filosófico del s. III.</span></div>
+                    <a href="https://www.youtube.com/results?search_query=filosofia+antigua+tardia+neoplatonismo" target="_blank">Ver en YouTube</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Videos -->
-    <section id="videos" class="section dark">
-        <div class="container">
-            <h2 class="section-title">Videos sobre Porfirio</h2>
-            <div class="videos-grid">
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <i class="fab fa-youtube"></i>
-                    </div>
-                    <h3>Porfirio y el Neoplatonismo</h3>
-                    <p>Análisis de la filosofía porfiriana y su lugar en la tradición neoplatónica</p>
-                    <a href="https://www.youtube.com/results?search_query=porfirio+neoplatonismo+filosofia" target="_blank">
-                        Ver en YouTube
-                    </a>
-                </div>
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <i class="fab fa-youtube"></i>
-                    </div>
-                    <h3>La Isagoge de Porfirio</h3>
-                    <p>Explicación de la obra más influyente de Porfirio sobre lógica aristotélica</p>
-                    <a href="https://www.youtube.com/results?search_query=isagoge+porfirio+logica" target="_blank">
-                        Ver en YouTube
-                    </a>
-                </div>
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <i class="fab fa-youtube"></i>
-                    </div>
-                    <h3>Porfirio contra el Cristianismo</h3>
-                    <p>Análisis de la crítica porfiriana al cristianismo primitivo</p>
-                    <a href="https://www.youtube.com/results?search_query=porfirio+contra+cristianismo" target="_blank">
-                        Ver en YouTube
-                    </a>
-                </div>
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <i class="fab fa-youtube"></i>
-                    </div>
-                    <h3>Filosofía Antigua Tardía</h3>
-                    <p>Contexto histórico y filosófico del período de Porfirio</p>
-                    <a href="https://www.youtube.com/results?search_query=filosofia+antigua+tardia+neoplatonismo" target="_blank">
-                        Ver en YouTube
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Fuentes -->
-    <section id="fuentes" class="section">
-        <div class="container">
-            <h2 class="section-title">Fuentes y Referencias</h2>
+    <section id="fuentes">
+        <div class="sec">
+            <h2>Fuentes y referencias</h2>
             <div class="sources-grid">
-                <div class="source-category">
-                    <h3>Enciclopedias Especializadas</h3>
-                    <ul class="source-list">
-                        <li>
-                            <a href="https://www.philosophica.info/archivo/2009/voces/porfirio/Porfirio.html" target="_blank">
-                                <i class="fas fa-external-link-alt"></i>
-                                Philosophica - Porfirio de Tiro
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://es.wikipedia.org/wiki/Porfirio" target="_blank">
-                                <i class="fas fa-external-link-alt"></i>
-                                Wikipedia - Porfirio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.webdianoia.com/medieval/porfirio.htm" target="_blank">
-                                <i class="fas fa-external-link-alt"></i>
-                                Webdianoia - Porfirio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.herdereditorial.com/enciclopedia-herder" target="_blank">
-                                <i class="fas fa-external-link-alt"></i>
-                                Enciclopedia Herder - Porfirio
-                            </a>
-                        </li>
+                <div class="source-cat">
+                    <h3>Enciclopedias y webs</h3>
+                    <ul class="src-list">
+                        <li><a href="https://www.philosophica.info/archivo/2009/voces/porfirio/Porfirio.html" target="_blank"><i class="fas fa-external-link-alt"></i>Philosophica.info – Porfirio</a></li>
+                        <li><a href="https://es.wikipedia.org/wiki/Porfirio" target="_blank"><i class="fas fa-external-link-alt"></i>Wikipedia – Porfirio</a></li>
+                        <li><a href="https://www.webdianoia.com/medieval/porfirio.htm" target="_blank"><i class="fas fa-external-link-alt"></i>Webdianoia – Porfirio</a></li>
+                        <li><a href="https://www.herdereditorial.com/enciclopedia-herder/porfirio" target="_blank"><i class="fas fa-external-link-alt"></i>Enciclopedia Herder</a></li>
                     </ul>
                 </div>
-                <div class="source-category">
-                    <h3>Textos Académicos</h3>
-                    <ul class="source-list">
-                        <li>
-                            <a href="https://plato.stanford.edu/entries/porphyry/" target="_blank">
-                                <i class="fas fa-external-link-alt"></i>
-                                Stanford Encyclopedia of Philosophy - Porphyry
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.academia.edu/s/porphyry-neoplatonism" target="_blank">
-                                <i class="fas fa-external-link-alt"></i>
-                                Academia.edu - Estudios sobre Porfirio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.jstor.org/action/doBasicSearch?Query=porphyry+neoplatonism" target="_blank">
-                                <i class="fas fa-external-link-alt"></i>
-                                JSTOR - Artículos sobre Porfirio
-                            </a>
-                        </li>
+                <div class="source-cat">
+                    <h3>Textos y artículos académicos</h3>
+                    <ul class="src-list">
+                        <li><a href="https://plato.stanford.edu/entries/porphyry/" target="_blank"><i class="fas fa-external-link-alt"></i>Stanford Encyclopedia: Porphyry (inglés)</a></li>
+                        <li><a href="https://www.academia.edu/s/porphyry-neoplatonism" target="_blank"><i class="fas fa-external-link-alt"></i>Academia.edu – Artículos sobre Porfirio</a></li>
+                        <li><a href="https://www.jstor.org/action/doBasicSearch?Query=porphyry+neoplatonism" target="_blank"><i class="fas fa-external-link-alt"></i>JSTOR – Porphyry (artículos inglés)</a></li>
                     </ul>
                 </div>
-                <div class="source-category">
-                    <h3>Bibliotecas Digitales</h3>
-                    <ul class="source-list">
-                        <li>
-                            <a href="https://archive.org/search.php?query=porphyry+philosophy" target="_blank">
-                                <i class="fas fa-external-link-alt"></i>
-                                Internet Archive - Obras de Porfirio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.cervantesvirtual.com/portales/filosofia_antigua/" target="_blank">
-                                <i class="fas fa-external-link-alt"></i>
-                                Biblioteca Cervantes Virtual - Filosofía Antigua
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.perseus.tufts.edu/hopper/" target="_blank">
-                                <i class="fas fa-external-link-alt"></i>
-                                Perseus Digital Library - Textos Clásicos
-                            </a>
-                        </li>
+                <div class="source-cat">
+                    <h3>Bibliotecas digitales</h3>
+                    <ul class="src-list">
+                        <li><a href="https://archive.org/search.php?query=porphyry+philosophy" target="_blank"><i class="fas fa-external-link-alt"></i>Archive.org – Obras de Porfirio</a></li>
+                        <li><a href="https://www.cervantesvirtual.com/portales/filosofia_antigua/" target="_blank"><i class="fas fa-external-link-alt"></i>Cervantes Virtual – Filosofía antigua</a></li>
+                        <li><a href="https://www.perseus.tufts.edu/hopper/" target="_blank"><i class="fas fa-external-link-alt"></i>Perseus – Textos Clásicos</a></li>
                     </ul>
                 </div>
-                <div class="source-category">
-                    <h3>Recursos Multimedia</h3>
-                    <ul class="source-list">
-                        <li>
-                            <a href="https://www.youtube.com/results?search_query=porfirio+filosofia+neoplatonismo" target="_blank">
-                                <i class="fab fa-youtube"></i>
-                                YouTube - Videos sobre Porfirio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://open.spotify.com/search/filosofia%20antigua" target="_blank">
-                                <i class="fab fa-spotify"></i>
-                                Spotify - Podcasts de Filosofía Antigua
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.ivoox.com/buscar_buscador_1.html?voz=porfirio+filosofia" target="_blank">
-                                <i class="fas fa-podcast"></i>
-                                iVoox - Audios sobre Porfirio
-                            </a>
-                        </li>
+                <div class="source-cat">
+                    <h3>Recursos multimedia</h3>
+                    <ul class="src-list">
+                        <li><a href="https://www.youtube.com/results?search_query=porfirio+filosofia+neoplatonismo" target="_blank"><i class="fab fa-youtube"></i>YouTube – Porfirio</a></li>
+                        <li><a href="https://open.spotify.com/search/filosofia%20antigua" target="_blank"><i class="fab fa-spotify"></i>Spotify – Filosofía antigua</a></li>
+                        <li><a href="https://www.ivoox.com/buscar_buscador_1.html?voz=porfirio+filosofia" target="_blank"><i class="fas fa-podcast"></i>iVoox – Porfirio</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Porfirio de Tiro</h3>
-                    <p>Filósofo neoplatónico cuyo legado perdura en la filosofía occidental.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Navegación</h3>
-                    <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#biografia">Biografía</a></li>
-                        <li><a href="#obras">Obras</a></li>
-                        <li><a href="#pensamiento">Pensamiento</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Recursos</h3>
-                    <ul>
-                        <li><a href="#videos">Videos</a></li>
-                        <li><a href="#fuentes">Fuentes</a></li>
-                        <li><a href="https://archive.org" target="_blank">Archive.org</a></li>
-                        <li><a href="https://plato.stanford.edu" target="_blank">Stanford Encyclopedia</a></li>
-                    </ul>
+    <footer>
+        <div class="foot-wrap">
+            <div class="foot-sec">
+                <h3>Porfirio de Tiro</h3>
+                <div>Filósofo neoplatónico, transmisor y renovador de la filosofía antigua.<br>
+                    <i class="fas fa-infinity"></i>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Página web educativa sobre Porfirio de Tiro. Contenido libre para uso académico.</p>
+            <div class="foot-sec"><h3>Navegación</h3>
+                <ul>
+                    <li><a href="#bio">Biografía</a></li>
+                    <li><a href="#obras">Obras</a></li>
+                    <li><a href="#pensamiento">Pensamiento</a></li>
+                    <li><a href="#infl">Influencias</a></li>
+                </ul>
+            </div>
+            <div class="foot-sec"><h3>Recursos</h3>
+                <ul>
+                    <li><a href="#videos">Videos</a></li>
+                    <li><a href="#fuentes">Fuentes</a></li>
+                    <li><a href="https://archive.org" target="_blank">Archive.org</a></li>
+                    <li><a href="https://plato.stanford.edu/entries/porphyry/" target="_blank">Stanford Encyclopedia</a></li>
+                </ul>
             </div>
         </div>
+        <div class="foot-btm">&copy; 2024 Página educativa sobre Porfirio de Tiro. Contenido libre para uso académico.</div>
     </footer>
-
     <script>
-/* Reset y Variables */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #e74c3c;
-    --text-color: #333;
-    --text-light: #666;
-    --background-color: #f8f9fa;
-    --dark-bg: #2c3e50;
-    --white: #ffffff;
-    --gold: #f39c12;
-    --purple: #8e44ad;
-    --green: #27ae60;
-    --orange: #e67e22;
-    --red: #e74c3c;
-    --blue: #3498db;
-    --font-primary: 'Playfair Display', serif;
-    --font-secondary: 'Inter', sans-serif;
-    --shadow: 0 10px 30px rgba(0,0,0,0.1);
-    --transition: all 0.3s ease;
-}
-
-body {
-    font-family: var(--font-secondary);
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
-    scroll-behavior: smooth;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Navegación */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(44, 62, 80, 0.95);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    padding: 1rem 0;
-    transition: var(--transition);
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--white);
-    font-size: 1.5rem;
-    font-weight: 700;
-    font-family: var(--font-primary);
-}
-
-.nav-logo i {
-    color: var(--gold);
-    font-size: 1.8rem;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-menu a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 500;
-    transition: var(--transition);
-    position: relative;
-}
-
-.nav-menu a:hover {
-    color: var(--gold);
-}
-
-.nav-menu a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--gold);
-    transition: var(--transition);
-}
-
-.nav-menu a:hover::after {
-    width: 100%;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background: var(--white);
-    margin: 3px 0;
-    transition: var(--transition);
-}
-
-/* Hero Section */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: var(--white);
-    position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,0 1000,300 1000,1000 0,700"/></svg>');
-    background-size: cover;
-}
-
-.hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-}
-
-.hero-title {
-    font-family: var(--font-primary);
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    background: linear-gradient(45deg, var(--white), var(--gold));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: fadeInUp 1s ease-out;
-}
-
-.hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: var(--gold);
-    font-weight: 500;
-    animation: fadeInUp 1s ease-out 0.2s both;
-}
-
-.hero-description {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    line-height: 1.8;
-    font-style: italic;
-    animation: fadeInUp 1s ease-out 0.4s both;
-}
-
-.cta-button {
-    background: linear-gradient(45deg, var(--gold), var(--orange));
-    color: var(--white);
-    padding: 15px 30px;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-    animation: fadeInUp 1s ease-out 0.6s both;
-}
-
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 20px 40px rgba(243, 156, 18, 0.4);
-}
-
-.hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: fadeInUp 1s ease-out 0.8s both;
-}
-
-.philosophical-symbol {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, var(--gold), var(--orange));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4rem;
-    color: var(--white);
-    animation: rotate 20s linear infinite;
-}
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.5rem;
-    color: var(--gold);
-    animation: bounce 2s infinite;
-}
-
-/* Secciones */
-.section {
-    padding: 100px 0;
-}
-
-.section.dark {
-    background: var(--dark-bg);
-    color: var(--white);
-}
-
-.section-title {
-    font-family: var(--font-primary);
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 4rem;
-    color: var(--primary-color);
-    position: relative;
-}
-
-.section.dark .section-title {
-    color: var(--white);
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background: var(--gold);
-}
-
-/* Timeline */
-.timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 2px;
-    background: var(--gold);
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -1px;
-}
-
-.timeline-item {
-    padding: 20px 40px;
-    position: relative;
-    background: transparent;
-    width: 50%;
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.timeline-item:nth-child(odd) {
-    left: 0;
-    text-align: right;
-}
-
-.timeline-item:nth-child(even) {
-    left: 50%;
-    text-align: left;
-}
-
-.timeline-marker {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: var(--gold);
-    border-radius: 50%;
-    top: 15px;
-    z-index: 1;
-}
-
-.timeline-item:nth-child(odd) .timeline-marker {
-    right: -10px;
-}
-
-.timeline-item:nth-child(even) .timeline-marker {
-    left: -10px;
-}
-
-.timeline-content {
-    padding: 20px;
-    background: var(--white);
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-}
-
-.timeline-content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-.timeline-content h3 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-}
-
-/* Obras Grid */
-.works-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.work-card {
-    background: var(--white);
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    text-align: center;
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.section.dark .work-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-}
-
-.work-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-}
-
-.work-icon {
-    font-size: 3rem;
-    color: var(--gold);
-    margin-bottom: 1rem;
-}
-
-.work-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-.section.dark .work-card h3 {
-    color: var(--white);
-}
-
-.work-links {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.work-links a {
-    background: var(--gold);
-    color: var(--white);
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: var(--transition);
-    font-size: 0.9rem;
-}
-
-.work-links a:hover {
-    background: var(--orange);
-    transform: translateY(-2px);
-}
-
-/* Filosofía Tabs */
-.philosophy-tabs {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.tab-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-    flex-wrap: wrap;
-}
-
-.tab-button {
-    padding: 12px 30px;
-    background: transparent;
-    border: 2px solid var(--gold);
-    color: var(--gold);
-    border-radius: 25px;
-    cursor: pointer;
-    transition: var(--transition);
-    font-weight: 600;
-}
-
-.tab-button.active,
-.tab-button:hover {
-    background: var(--gold);
-    color: var(--white);
-}
-
-.tab-panel {
-    display: none;
-    animation: fadeIn 0.5s ease-out;
-}
-
-.tab-panel.active {
-    display: block;
-}
-
-.philosophy-content {
-    background: var(--white);
-    padding: 3rem;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-}
-
-.philosophy-content h3 {
-    color: var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.philosophy-content blockquote {
-    background: linear-gradient(45deg, var(--gold), var(--orange));
-    color: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    font-style: italic;
-    font-size: 1.2rem;
-    margin: 2rem 0;
-    position: relative;
-}
-
-.philosophy-content blockquote::before {
-    content: '"';
-    font-size: 4rem;
-    position: absolute;
-    top: -10px;
-    left: 20px;
-    opacity: 0.3;
-}
-
-/* Jerarquía Metafísica */
-.hierarchy {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin: 2rem 0;
-}
-
-.level {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    padding: 1.5rem;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    color: var(--white);
-    border-radius: 10px;
-    animation: slideInLeft 0.8s ease-out;
-}
-
-.level-name {
-    font-size: 1.3rem;
-    font-weight: 700;
-    min-width: 150px;
-}
-
-.level-description {
-    flex: 1;
-    font-size: 1.1rem;
-}
-
-/* Virtudes Grid */
-.virtues-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.virtue-card {
-    background: linear-gradient(45deg, var(--purple), var(--blue));
-    color: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    transition: var(--transition);
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.virtue-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(142, 68, 173, 0.3);
-}
-
-.virtue-card h4 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-}
-
-/* Conceptos Lógicos */
-.logic-concepts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.concept {
-    background: linear-gradient(45deg, var(--green), var(--blue));
-    color: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.concept h4 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-}
-
-/* Temas Religiosos */
-.religious-themes {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.theme {
-    background: linear-gradient(45deg, var(--red), var(--orange));
-    color: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.theme h4 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-}
-
-/* Influencias */
-.influences-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin-top: 2rem;
-}
-
-.influences-received h3,
-.influences-given h3 {
-    color: var(--gold);
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.influence-cards {
-    display: grid;
-    gap: 1.5rem;
-}
-
-.influence-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 1.5rem;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    transition: var(--transition);
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.influence-card:hover {
-    transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.influence-icon {
-    font-size: 2rem;
-    color: var(--gold);
-    min-width: 50px;
-}
-
-.influence-card h4 {
-    color: var(--white);
-    margin-bottom: 0.5rem;
-}
-
-.influence-card p {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
-}
-
-/* Contexto Grid */
-.context-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.context-card {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-    text-align: center;
-    transition: var(--transition);
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.context-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-}
-
-.context-icon {
-    font-size: 3rem;
-    color: var(--gold);
-    margin-bottom: 1rem;
-}
-
-.context-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-/* Videos Grid */
-.videos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.video-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    transition: var(--transition);
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.video-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.video-thumbnail {
-    font-size: 4rem;
-    color: var(--red);
-    margin-bottom: 1rem;
-}
-
-.video-card h3 {
-    color: var(--white);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-}
-
-.video-card p {
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 1.5rem;
-}
-
-.video-card a {
-    background: var(--red);
-    color: var(--white);
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: var(--transition);
-    display: inline-block;
-}
-
-.video-card a:hover {
-    background: var(--orange);
-    transform: translateY(-2px);
-}
-
-/* Fuentes Grid */
-.sources-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.source-category {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.source-category h3 {
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-    text-align: center;
-}
-
-.source-list {
-    list-style: none;
-}
-
-.source-list li {
-    margin-bottom: 1rem;
-}
-
-.source-list a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    transition: var(--transition);
-}
-
-.source-list a:hover {
-    background: var(--background-color);
-    color: var(--primary-color);
-}
-
-/* Footer */
-.footer {
-    background: var(--dark-bg);
-    color: var(--white);
-    padding: 3rem 0 1rem;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.footer-section h3 {
-    color: var(--gold);
-    margin-bottom: 1rem;
-}
-
-.footer-section ul {
-    list-style: none;
-}
-
-.footer-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-section a {
-    color: var(--white);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.footer-section a:hover {
-    color: var(--gold);
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.7);
-}
-
-/* Animaciones */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background-color: var(--primary-color);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
-        padding: 2rem 0;
-    }
-
-    .nav-menu.active {
-        left: 0;
-    }
-
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .timeline::after {
-        left: 20px;
-    }
-
-    .timeline-item {
-        width: 100%;
-        padding-left: 50px;
-        padding-right: 25px;
-        text-align: left;
-    }
-
-    .timeline-item::before {
-        left: 10px;
-    }
-
-    .timeline-marker {
-        left: 10px !important;
-    }
-
-    .influences-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .works-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .tab-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .philosophy-content {
-        padding: 2rem;
-    }
-
-    .hierarchy {
-        gap: 0.5rem;
-    }
-
-    .level {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-
-    .level-name {
-        min-width: auto;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .work-card,
-    .context-card,
-    .source-category {
-        padding: 1.5rem;
-    }
-
-    .philosophy-content {
-        padding: 1.5rem;
-    }
-
-    .timeline-content {
-        padding: 15px;
-    }
-}
+        // Navegación responsive
+        document.getElementById('mobmenu').onclick = function() {
+            var menu=document.getElementById('menulist');
+            menu.classList.toggle('show');
+        };
+        document.querySelectorAll('.nav-links a').forEach(function(el){
+            el.onclick = function(){document.getElementById('menulist').classList.remove('show');};
+        });
+        // Scroll suave por botón
+        function scrollToDiv(id){
+            var d=document.getElementById(id);
+            if(d){d.scrollIntoView({behavior:"smooth",block:"start"});}
+        }
+        // Tabs
+        document.querySelectorAll('.tab-btn').forEach(function(btn){
+            btn.onclick=function(){
+                document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+                document.querySelectorAll('.tab-content').forEach(function(t){t.classList.remove('active');});
+                btn.classList.add('active');
+                document.getElementById(btn.dataset.tab).classList.add('active');
+            }
+        });
+        // Citas aleatorias flotantes (cada 40 seg)
+        var quotes=[
+            "El alma que se ha liberado de las pasiones... puede ascender hacia la contemplación de lo divino.",
+            "El Uno es la fuente de toda realidad, pero él mismo está más allá de toda determinación.",
+            "La filosofía es una purificación y una liberación del alma.",
+            "Sobre los géneros y las especies [...] me abstendré de hablar.",
+            "Los dioses no necesitan sacrificios cruentos. Lo que verdaderamente les agrada es la pureza del alma."
+        ];
+        function floatQuote(){
+            if(document.querySelector('.float-quote'))return;
+            var q=document.createElement('div');
+            q.className='float-quote';
+            q.innerHTML='<blockquote>'+quotes[Math.floor(Math.random()*quotes.length)]+'</blockquote><button title="Cerrar" onclick="this.parentNode.remove()">×</button>';
+            document.body.appendChild(q);
+            setTimeout(()=>{q.remove()},11000);
+        }
+        setTimeout(floatQuote,9000);
+        setInterval(floatQuote,40000);
+
+        // Resalta sección actual en navegación
+        window.addEventListener('scroll',function(){
+            let scrollY=window.scrollY || window.pageYOffset;
+            let sections=document.querySelectorAll('section'); let NAV=70, found=false;
+            sections.forEach(function(sec){
+                let o=sec.offsetTop-NAV, h=sec.offsetHeight;
+                let link=document.querySelector(`.nav-links a[href="#${sec.id}"]`);
+                if(link) link.classList.remove('activo');
+                if(!found && scrollY>=o && scrollY<o+h){
+                    if(link) link.classList.add('activo'); found=true;
+                }
+            });
+        });
     </script>
 </body>
 </html>

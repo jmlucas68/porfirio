@@ -1,1 +1,0 @@
-Fix: Incrusta CSS y JS en index.html para correcta visualización en GitHub Pages.
