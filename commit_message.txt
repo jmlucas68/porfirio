@@ -1,1 +1,1 @@
-Update image to PNG format
+Update links in index.html based on cambios.md
